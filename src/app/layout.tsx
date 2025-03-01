@@ -7,11 +7,13 @@ import { Footer } from '@/components/layout/footer';
 const montserrat = Montserrat({
 	variable: '--font-montserrat',
 	subsets: ['latin'],
+	display: 'swap',
 });
 
 const josefinSans = Josefin_Sans({
 	variable: '--font-josefin-sans',
 	subsets: ['latin'],
+	display: 'swap',
 });
 
 export const metadata: Metadata = {

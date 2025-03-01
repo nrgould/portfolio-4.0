@@ -1,341 +1,201 @@
+'use client';
+
 import Image from 'next/image';
-import Link from 'next/link';
+import * as motion from 'motion/react-client';
+import { Sidebar } from '@/components/layout/sidebar';
 
 export default function About() {
 	return (
 		<div className='flex flex-col md:flex-row min-h-screen'>
-			{/* Left Side Navigation */}
-			<div className='md:w-64 lg:w-72 md:fixed md:h-screen p-8 flex flex-col justify-between'>
-				<div>
-					{/* Logo */}
-					<div className='mb-12'>
-						<Link href='/' className='block'>
-							<div className='w-16 h-16 relative mb-4'>
-								<Image
-									src='/images/logo.png'
-									alt='Nicholas Gould Photography'
-									width={64}
-									height={64}
-									className='object-contain'
-								/>
-							</div>
-							<h1 className='text-lg font-light tracking-wide'>
-								Nicholas Gould
-							</h1>
-						</Link>
-					</div>
-
-					{/* Main Navigation */}
-					<nav className='space-y-6'>
-						<Link
-							href='/photography'
-							className='block text-muted-foreground font-light tracking-wide text-sm hover:text-primary transition-colors'
-						>
-							PHOTOGRAPHY
-						</Link>
-						<Link
-							href='/case-studies'
-							className='block text-muted-foreground font-light tracking-wide text-sm hover:text-primary transition-colors'
-						>
-							CASE STUDIES
-						</Link>
-						<Link
-							href='/about'
-							className='block text-foreground font-light tracking-wide text-sm hover:text-primary transition-colors'
-						>
-							ABOUT
-						</Link>
-						<Link
-							href='/contact'
-							className='block text-muted-foreground font-light tracking-wide text-sm hover:text-primary transition-colors'
-						>
-							CONTACT
-						</Link>
-					</nav>
-				</div>
-
-				{/* Social Links */}
-				<div className='hidden md:block'>
-					<div className='flex space-x-4 mb-4'>
-						<a
-							href='https://instagram.com'
-							target='_blank'
-							rel='noopener noreferrer'
-							className='text-muted-foreground hover:text-foreground'
-						>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								width='18'
-								height='18'
-								viewBox='0 0 24 24'
-								fill='none'
-								stroke='currentColor'
-								strokeWidth='1.5'
-								strokeLinecap='round'
-								strokeLinejoin='round'
-							>
-								<rect
-									width='20'
-									height='20'
-									x='2'
-									y='2'
-									rx='5'
-									ry='5'
-								/>
-								<path d='M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z' />
-								<line x1='17.5' x2='17.51' y1='6.5' y2='6.5' />
-							</svg>
-						</a>
-						<a
-							href='https://linkedin.com'
-							target='_blank'
-							rel='noopener noreferrer'
-							className='text-muted-foreground hover:text-foreground'
-						>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								width='18'
-								height='18'
-								viewBox='0 0 24 24'
-								fill='none'
-								stroke='currentColor'
-								strokeWidth='1.5'
-								strokeLinecap='round'
-								strokeLinejoin='round'
-							>
-								<path d='M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z' />
-								<rect width='4' height='12' x='2' y='9' />
-								<circle cx='4' cy='4' r='2' />
-							</svg>
-						</a>
-						<a
-							href='https://behance.net'
-							target='_blank'
-							rel='noopener noreferrer'
-							className='text-muted-foreground hover:text-foreground'
-						>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								width='18'
-								height='18'
-								viewBox='0 0 24 24'
-								fill='none'
-								stroke='currentColor'
-								strokeWidth='1.5'
-								strokeLinecap='round'
-								strokeLinejoin='round'
-							>
-								<path d='M1 12h6v4H1z' />
-								<path d='M8 8h6v8H8z' />
-								<path d='M15 4h6v12h-6z' />
-							</svg>
-						</a>
-					</div>
-					<p className='text-xs text-muted-foreground'>
-						© {new Date().getFullYear()} Nicholas Gould
-					</p>
-				</div>
-			</div>
+			{/* Sidebar Navigation */}
+			<Sidebar currentPath='/about' />
 
 			{/* Main Content */}
-			<div className='flex-1 md:ml-64 lg:ml-72'>
-				<div className='max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24'>
-					<h1 className='text-3xl font-light mb-8'>About</h1>
+			<div className='flex-1 md:ml-64 lg:ml-72 p-4 md:p-8'>
+				<motion.h1
+					className='text-2xl mb-8'
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6, delay: 0.2 }}
+					viewport={{ once: true }}
+				>
+					About Me
+				</motion.h1>
 
-					<div className='grid grid-cols-1 md:grid-cols-2 gap-12 mb-12'>
-						<div className='aspect-[3/4] relative'>
+				<div className='grid grid-cols-1 md:grid-cols-2 gap-8 mb-12'>
+					<motion.div
+						initial={{ opacity: 0, x: -20 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						transition={{ duration: 0.7, delay: 0.3 }}
+						viewport={{ once: true }}
+					>
+						<motion.div
+							className='aspect-[4/5] relative overflow-hidden mb-6'
+							initial={{ opacity: 0, scale: 0.95 }}
+							whileInView={{ opacity: 1, scale: 1 }}
+							transition={{ duration: 0.8, delay: 0.4 }}
+							viewport={{ once: true }}
+						>
 							<Image
-								src='/images/nicholas_gould.jpg'
+								src='/images/profile.jpg'
 								alt='Nicholas Gould'
 								fill
+								sizes='(max-width: 768px) 100vw, 50vw'
 								className='object-cover'
+								priority
 							/>
-						</div>
-						<div>
-							<h2 className='text-xl font-light mb-4'>
-								Nicholas Gould
-							</h2>
-							<p className='text-muted-foreground font-light leading-relaxed mb-4'>
-								I&apos;m a professional photographer
-								specializing in product and lifestyle
-								photography based in North Carolina, USA.
-							</p>
-							<p className='text-muted-foreground font-light leading-relaxed mb-4'>
-								With a keen eye for detail and composition, I
-								create imagery that tells compelling stories for
-								brands and individuals. My approach combines
-								technical precision with an artistic vision to
-								capture the essence of your products and the
-								lifestyle they represent.
-							</p>
-							<p className='text-muted-foreground font-light leading-relaxed mb-4'>
-								I believe that great photography is about more
-								than just taking pictures – it&apos;s about
-								creating a visual narrative that resonates with
-								your audience and elevates your brand.
-							</p>
-						</div>
-					</div>
+						</motion.div>
+					</motion.div>
 
-					<div className='mb-12'>
-						<h2 className='text-xl font-light mb-4'>My Approach</h2>
-						<p className='text-muted-foreground font-light leading-relaxed mb-4'>
-							I approach each project with a collaborative
-							mindset, working closely with clients to understand
-							their vision and goals. Whether it&apos;s capturing
-							the intricate details of a product or creating
-							lifestyle imagery that showcases your brand&apos;s
-							ethos, I bring a thoughtful and meticulous approach
-							to every shoot.
-						</p>
-						<p className='text-muted-foreground font-light leading-relaxed mb-4'>
-							My work is characterized by clean compositions,
-							attention to detail, and a natural aesthetic that
-							allows the subject to shine. I believe in creating
-							images that are not only visually striking but also
-							authentic and purposeful.
-						</p>
-					</div>
-
-					<div className='mb-12'>
-						<h2 className='text-xl font-light mb-4'>Services</h2>
-						<ul className='space-y-4'>
-							<li>
-								<h3 className='text-lg font-light'>
-									Product Photography
-								</h3>
-								<p className='text-muted-foreground font-light leading-relaxed'>
-									Showcase your products with clean, detailed
-									imagery that highlights their features and
-									quality. Perfect for e-commerce, catalogs,
-									and marketing materials.
-								</p>
-							</li>
-							<li>
-								<h3 className='text-lg font-light'>
-									Lifestyle Photography
-								</h3>
-								<p className='text-muted-foreground font-light leading-relaxed'>
-									Bring your products to life with contextual
-									imagery that shows them in use. Ideal for
-									creating an emotional connection with your
-									audience.
-								</p>
-							</li>
-							<li>
-								<h3 className='text-lg font-light'>
-									Brand Campaigns
-								</h3>
-								<p className='text-muted-foreground font-light leading-relaxed'>
-									Develop a cohesive visual identity for your
-									brand with photography that tells your story
-									and resonates with your target audience.
-								</p>
-							</li>
-						</ul>
-					</div>
-
-					<div>
-						<h2 className='text-xl font-light mb-4'>
-							Let&apos;s Work Together
-						</h2>
-						<p className='text-muted-foreground font-light leading-relaxed mb-6'>
-							I&apos;m always excited to collaborate on new
-							projects and help brands elevate their visual
-							presence. If you&apos;re interested in working
-							together, please get in touch to discuss your
-							project.
-						</p>
-						<Link
-							href='/contact'
-							className='inline-block px-6 py-2 border border-foreground text-foreground font-light hover:bg-foreground hover:text-background transition-colors duration-300'
+					<motion.div
+						initial={{ opacity: 0, x: 20 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						transition={{ duration: 0.7, delay: 0.4 }}
+						viewport={{ once: true }}
+						className='space-y-4'
+					>
+						<motion.p
+							className='text-muted-foreground'
+							initial={{ opacity: 0 }}
+							whileInView={{ opacity: 1 }}
+							transition={{ duration: 0.6, delay: 0.5 }}
+							viewport={{ once: true }}
 						>
-							Contact Me
-						</Link>
-					</div>
+							I&apos;m Nicholas Gould, a commercial photographer
+							specializing in product and lifestyle photography.
+							With over 8 years of experience, I&apos;ve developed
+							a distinctive style that combines clean, minimalist
+							aesthetics with authentic storytelling.
+						</motion.p>
+						<motion.p
+							className='text-muted-foreground'
+							initial={{ opacity: 0 }}
+							whileInView={{ opacity: 1 }}
+							transition={{ duration: 0.6, delay: 0.6 }}
+							viewport={{ once: true }}
+						>
+							My journey in photography began with a passion for
+							capturing the essence of products and the stories
+							they tell. Today, I work with brands across various
+							industries to create compelling visual narratives
+							that resonate with their target audiences.
+						</motion.p>
+						<motion.p
+							className='text-muted-foreground'
+							initial={{ opacity: 0 }}
+							whileInView={{ opacity: 1 }}
+							transition={{ duration: 0.6, delay: 0.7 }}
+							viewport={{ once: true }}
+						>
+							Based in Seattle, I bring a Pacific Northwest
+							sensibility to my work—embracing natural light,
+							organic textures, and environmental consciousness.
+							My approach is collaborative and detail-oriented,
+							ensuring that each project not only meets but
+							exceeds client expectations.
+						</motion.p>
+					</motion.div>
 				</div>
 
-				{/* Mobile Footer */}
-				<div className='md:hidden p-8 mt-4'>
-					<div className='flex justify-center space-x-6 mb-4'>
-						<a
-							href='https://instagram.com'
-							target='_blank'
-							rel='noopener noreferrer'
-							className='text-muted-foreground hover:text-foreground'
+				<motion.div
+					className='mb-12'
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.7, delay: 0.5 }}
+					viewport={{ once: true }}
+				>
+					<h2 className='text-xl mb-4'>My Approach</h2>
+					<div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+						<motion.div
+							initial={{ opacity: 0, y: 10 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.6, delay: 0.6 }}
+							viewport={{ once: true }}
 						>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								width='20'
-								height='20'
-								viewBox='0 0 24 24'
-								fill='none'
-								stroke='currentColor'
-								strokeWidth='1.5'
-								strokeLinecap='round'
-								strokeLinejoin='round'
-							>
-								<rect
-									width='20'
-									height='20'
-									x='2'
-									y='2'
-									rx='5'
-									ry='5'
-								/>
-								<path d='M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z' />
-								<line x1='17.5' x2='17.51' y1='6.5' y2='6.5' />
-							</svg>
-						</a>
-						<a
-							href='https://linkedin.com'
-							target='_blank'
-							rel='noopener noreferrer'
-							className='text-muted-foreground hover:text-foreground'
+							<h3 className='text-lg mb-2'>Authenticity</h3>
+							<p className='text-muted-foreground'>
+								I believe in creating authentic images that tell
+								a genuine story. Whether it&apos;s a product
+								shot or a lifestyle scene, my goal is to capture
+								the true essence and emotion of the subject.
+							</p>
+						</motion.div>
+						<motion.div
+							initial={{ opacity: 0, y: 10 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.6, delay: 0.7 }}
+							viewport={{ once: true }}
 						>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								width='20'
-								height='20'
-								viewBox='0 0 24 24'
-								fill='none'
-								stroke='currentColor'
-								strokeWidth='1.5'
-								strokeLinecap='round'
-								strokeLinejoin='round'
-							>
-								<path d='M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z' />
-								<rect width='4' height='12' x='2' y='9' />
-								<circle cx='4' cy='4' r='2' />
-							</svg>
-						</a>
-						<a
-							href='https://behance.net'
-							target='_blank'
-							rel='noopener noreferrer'
-							className='text-muted-foreground hover:text-foreground'
+							<h3 className='text-lg mb-2'>
+								Attention to Detail
+							</h3>
+							<p className='text-muted-foreground'>
+								The difference between a good image and a great
+								one often lies in the details. I meticulously
+								plan and execute each shot, ensuring that every
+								element contributes to the overall narrative.
+							</p>
+						</motion.div>
+						<motion.div
+							initial={{ opacity: 0, y: 10 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.6, delay: 0.8 }}
+							viewport={{ once: true }}
 						>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								width='20'
-								height='20'
-								viewBox='0 0 24 24'
-								fill='none'
-								stroke='currentColor'
-								strokeWidth='1.5'
-								strokeLinecap='round'
-								strokeLinejoin='round'
-							>
-								<path d='M1 12h6v4H1z' />
-								<path d='M8 8h6v8H8z' />
-								<path d='M15 4h6v12h-6z' />
-							</svg>
-						</a>
+							<h3 className='text-lg mb-2'>Collaboration</h3>
+							<p className='text-muted-foreground'>
+								I view each project as a partnership. By
+								understanding your brand&apos;s vision and
+								goals, I can create images that not only look
+								beautiful but also effectively communicate your
+								message.
+							</p>
+						</motion.div>
+						<motion.div
+							initial={{ opacity: 0, y: 10 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.6, delay: 0.9 }}
+							viewport={{ once: true }}
+						>
+							<h3 className='text-lg mb-2'>Innovation</h3>
+							<p className='text-muted-foreground'>
+								While respecting traditional photography
+								principles, I continuously explore new
+								techniques and perspectives to keep my work
+								fresh and engaging.
+							</p>
+						</motion.div>
 					</div>
-					<p className='text-xs text-muted-foreground text-center'>
-						© {new Date().getFullYear()} Nicholas Gould
+				</motion.div>
+
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.7, delay: 0.6 }}
+					viewport={{ once: true }}
+				>
+					<h2 className='text-xl mb-4'>Let&apos;s Work Together</h2>
+					<p className='text-muted-foreground mb-4'>
+						I&apos;m always excited to collaborate on new projects
+						and bring creative visions to life. Whether you&apos;re
+						a brand looking for product photography, an agency
+						needing lifestyle content, or an individual with a
+						unique project, I&apos;d love to hear from you.
 					</p>
-				</div>
+					<motion.div
+						initial={{ opacity: 0, y: 10 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.6, delay: 0.7 }}
+						viewport={{ once: true }}
+					>
+						<a
+							href='/contact'
+							className='inline-block px-6 py-3 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors'
+						>
+							Get in Touch
+						</a>
+					</motion.div>
+				</motion.div>
 			</div>
 		</div>
 	);
