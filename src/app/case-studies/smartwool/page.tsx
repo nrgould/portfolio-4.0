@@ -138,12 +138,12 @@ export default function SmartWoolCaseStudy() {
 			</div>
 
 			{/* Main Content */}
-			<div className='flex-1 md:ml-64 lg:ml-72'>
-				<div className='max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24'>
+			<div className='flex-1 md:ml-64 lg:ml-72 p-4 md:p-8'>
+				<div className='max-w-[75%] mx-auto'>
 					<div className='mb-8'>
 						<Link
 							href='/case-studies'
-							className='text-muted-foreground font-light hover:text-foreground flex items-center'
+							className='inline-flex items-center text-muted-foreground hover:text-foreground transition-colors'
 						>
 							<svg
 								xmlns='http://www.w3.org/2000/svg'
@@ -273,22 +273,6 @@ export default function SmartWoolCaseStudy() {
 									across diverse environments
 								</li>
 							</ul>
-						</div>
-						<div>
-							<h2 className='text-xl font-light mb-4'>
-								Client Feedback
-							</h2>
-							<p className='text-muted-foreground font-light italic'>
-								"Nicholas captured exactly what we were looking
-								for - images that showcase both the technical
-								aspects of our products and the lifestyle they
-								enable. The photography perfectly communicates
-								our brand values of quality, comfort, and
-								connection to nature."
-							</p>
-							<p className='text-muted-foreground font-light mt-4'>
-								— Marketing Director, Smartwool
-							</p>
 						</div>
 					</div>
 

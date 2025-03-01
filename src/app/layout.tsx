@@ -3,6 +3,7 @@ import { Montserrat, Josefin_Sans } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Footer } from '@/components/layout/footer';
+import { Sidebar } from '@/components/layout/sidebar';
 
 const montserrat = Montserrat({
 	variable: '--font-montserrat',
@@ -43,6 +44,7 @@ export default function RootLayout({
 					enableSystem={false}
 					disableTransitionOnChange
 				>
+					<Sidebar currentPath='/case-studies' />
 					<main className='flex-1 flex flex-col'>{children}</main>
 					<Footer />
 				</ThemeProvider>

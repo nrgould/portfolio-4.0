@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import * as motion from 'motion/react-client';
-import { Sidebar } from '@/components/layout/sidebar';
 
 // Define the photo type
 interface Photo {
@@ -517,9 +516,6 @@ export default function Photography() {
 
 	return (
 		<div className='flex flex-col md:flex-row min-h-screen'>
-			{/* Sidebar Navigation */}
-			<Sidebar currentPath='/photography' />
-
 			{/* Main Content */}
 			<div className='flex-1 md:ml-64 lg:ml-72 p-4 md:p-8'>
 				<motion.h1
