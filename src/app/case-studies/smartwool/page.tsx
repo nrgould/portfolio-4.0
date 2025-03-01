@@ -1,142 +1,12 @@
+'use client';
+
+import * as motion from 'motion/react-client';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function SmartWoolCaseStudy() {
 	return (
-		<div className='flex flex-col md:flex-row min-h-screen'>
-			{/* Left Side Navigation */}
-			<div className='md:w-64 lg:w-72 md:fixed md:h-screen p-8 flex flex-col justify-between'>
-				<div>
-					{/* Logo */}
-					<div className='mb-12'>
-						<Link href='/' className='block'>
-							<div className='w-16 h-16 relative mb-4'>
-								<Image
-									src='/images/logo.png'
-									alt='Nicholas Gould Photography'
-									width={64}
-									height={64}
-									className='object-contain'
-								/>
-							</div>
-							<h1 className='text-lg font-light tracking-wide'>
-								Nicholas Gould
-							</h1>
-						</Link>
-					</div>
-
-					{/* Main Navigation */}
-					<nav className='space-y-6'>
-						<Link
-							href='/photography'
-							className='block text-muted-foreground font-light tracking-wide text-sm hover:text-primary transition-colors'
-						>
-							PHOTOGRAPHY
-						</Link>
-						<Link
-							href='/case-studies'
-							className='block text-foreground font-light tracking-wide text-sm hover:text-primary transition-colors'
-						>
-							CASE STUDIES
-						</Link>
-						<Link
-							href='/about'
-							className='block text-muted-foreground font-light tracking-wide text-sm hover:text-primary transition-colors'
-						>
-							ABOUT
-						</Link>
-						<Link
-							href='/contact'
-							className='block text-muted-foreground font-light tracking-wide text-sm hover:text-primary transition-colors'
-						>
-							CONTACT
-						</Link>
-					</nav>
-				</div>
-
-				{/* Social Links */}
-				<div className='hidden md:block'>
-					<div className='flex space-x-4 mb-4'>
-						<a
-							href='https://instagram.com'
-							target='_blank'
-							rel='noopener noreferrer'
-							className='text-muted-foreground hover:text-foreground'
-						>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								width='18'
-								height='18'
-								viewBox='0 0 24 24'
-								fill='none'
-								stroke='currentColor'
-								strokeWidth='1.5'
-								strokeLinecap='round'
-								strokeLinejoin='round'
-							>
-								<rect
-									width='20'
-									height='20'
-									x='2'
-									y='2'
-									rx='5'
-									ry='5'
-								/>
-								<path d='M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z' />
-								<line x1='17.5' x2='17.51' y1='6.5' y2='6.5' />
-							</svg>
-						</a>
-						<a
-							href='https://linkedin.com'
-							target='_blank'
-							rel='noopener noreferrer'
-							className='text-muted-foreground hover:text-foreground'
-						>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								width='18'
-								height='18'
-								viewBox='0 0 24 24'
-								fill='none'
-								stroke='currentColor'
-								strokeWidth='1.5'
-								strokeLinecap='round'
-								strokeLinejoin='round'
-							>
-								<path d='M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z' />
-								<rect width='4' height='12' x='2' y='9' />
-								<circle cx='4' cy='4' r='2' />
-							</svg>
-						</a>
-						<a
-							href='https://behance.net'
-							target='_blank'
-							rel='noopener noreferrer'
-							className='text-muted-foreground hover:text-foreground'
-						>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								width='18'
-								height='18'
-								viewBox='0 0 24 24'
-								fill='none'
-								stroke='currentColor'
-								strokeWidth='1.5'
-								strokeLinecap='round'
-								strokeLinejoin='round'
-							>
-								<path d='M1 12h6v4H1z' />
-								<path d='M8 8h6v8H8z' />
-								<path d='M15 4h6v12h-6z' />
-							</svg>
-						</a>
-					</div>
-					<p className='text-xs text-muted-foreground'>
-						© {new Date().getFullYear()} Nicholas Gould
-					</p>
-				</div>
-			</div>
-
+		<div className='flex-1'>
 			{/* Main Content */}
 			<div className='flex-1 md:ml-64 lg:ml-72 p-4 md:p-8'>
 				<div className='max-w-[75%] mx-auto'>
@@ -163,20 +33,38 @@ export default function SmartWoolCaseStudy() {
 						</Link>
 					</div>
 
-					<h1 className='text-3xl font-light mb-4'>
+					<motion.h1
+						className='text-3xl font-light mb-4'
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6, delay: 0.2 }}
+					>
 						Smartwool Campaign
-					</h1>
+					</motion.h1>
 
-					<div className='aspect-[16/9] relative mb-8'>
+					<motion.div
+						className='aspect-[16/9] relative mb-8'
+						initial={{ opacity: 0, y: 30 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6, delay: 0.3 }}
+					>
 						<Image
 							src='/images/optimized_images/lifestyle_smartwool_jacket.jpg'
 							alt='Smartwool Campaign'
 							fill
 							className='object-cover'
 						/>
-					</div>
+					</motion.div>
 
-					<div className='grid grid-cols-1 md:grid-cols-2 gap-8 mb-12'>
+					<motion.div
+						className='grid grid-cols-1 md:grid-cols-2 gap-8 mb-12'
+						initial={{ opacity: 0, y: 30 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6, delay: 0.4 }}
+					>
 						<div>
 							<h2 className='text-xl font-light mb-4'>
 								Project Overview
@@ -218,12 +106,24 @@ export default function SmartWoolCaseStudy() {
 								campaign.
 							</p>
 						</div>
-					</div>
+					</motion.div>
 
-					<h2 className='text-xl font-light mb-6 text-center'>
+					<motion.h2
+						className='text-xl font-light mb-6 text-center'
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6, delay: 0.5 }}
+					>
 						The Results
-					</h2>
-					<div className='grid grid-cols-1 md:grid-cols-3 gap-4 mb-12'>
+					</motion.h2>
+					<motion.div
+						className='grid grid-cols-1 md:grid-cols-3 gap-4 mb-12'
+						initial={{ opacity: 0, y: 30 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6, delay: 0.6 }}
+					>
 						<div className='aspect-square relative'>
 							<Image
 								src='/images/optimized_images/lifestyle_smartwool_jacket.jpg'
@@ -248,9 +148,15 @@ export default function SmartWoolCaseStudy() {
 								className='object-cover'
 							/>
 						</div>
-					</div>
+					</motion.div>
 
-					<div className='grid grid-cols-1 md:grid-cols-2 gap-8 mb-12'>
+					<motion.div
+						className='grid grid-cols-1 md:grid-cols-2 gap-8 mb-12'
+						initial={{ opacity: 0, y: 30 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6, delay: 0.7 }}
+					>
 						<div>
 							<h2 className='text-xl font-light mb-4'>
 								Key Challenges
@@ -274,98 +180,22 @@ export default function SmartWoolCaseStudy() {
 								</li>
 							</ul>
 						</div>
-					</div>
+					</motion.div>
 
-					<div className='text-center'>
+					<motion.div
+						className='text-center'
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6, delay: 0.8 }}
+					>
 						<Link
 							href='/case-studies'
 							className='inline-block px-6 py-2 border border-foreground text-foreground font-light hover:bg-foreground hover:text-background transition-colors duration-300'
 						>
 							View More Case Studies
 						</Link>
-					</div>
-				</div>
-
-				{/* Mobile Footer */}
-				<div className='md:hidden p-8 mt-4'>
-					<div className='flex justify-center space-x-6 mb-4'>
-						<a
-							href='https://instagram.com'
-							target='_blank'
-							rel='noopener noreferrer'
-							className='text-muted-foreground hover:text-foreground'
-						>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								width='20'
-								height='20'
-								viewBox='0 0 24 24'
-								fill='none'
-								stroke='currentColor'
-								strokeWidth='1.5'
-								strokeLinecap='round'
-								strokeLinejoin='round'
-							>
-								<rect
-									width='20'
-									height='20'
-									x='2'
-									y='2'
-									rx='5'
-									ry='5'
-								/>
-								<path d='M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z' />
-								<line x1='17.5' x2='17.51' y1='6.5' y2='6.5' />
-							</svg>
-						</a>
-						<a
-							href='https://linkedin.com'
-							target='_blank'
-							rel='noopener noreferrer'
-							className='text-muted-foreground hover:text-foreground'
-						>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								width='20'
-								height='20'
-								viewBox='0 0 24 24'
-								fill='none'
-								stroke='currentColor'
-								strokeWidth='1.5'
-								strokeLinecap='round'
-								strokeLinejoin='round'
-							>
-								<path d='M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z' />
-								<rect width='4' height='12' x='2' y='9' />
-								<circle cx='4' cy='4' r='2' />
-							</svg>
-						</a>
-						<a
-							href='https://behance.net'
-							target='_blank'
-							rel='noopener noreferrer'
-							className='text-muted-foreground hover:text-foreground'
-						>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								width='20'
-								height='20'
-								viewBox='0 0 24 24'
-								fill='none'
-								stroke='currentColor'
-								strokeWidth='1.5'
-								strokeLinecap='round'
-								strokeLinejoin='round'
-							>
-								<path d='M1 12h6v4H1z' />
-								<path d='M8 8h6v8H8z' />
-								<path d='M15 4h6v12h-6z' />
-							</svg>
-						</a>
-					</div>
-					<p className='text-xs text-muted-foreground text-center'>
-						© {new Date().getFullYear()} Nicholas Gould
-					</p>
+					</motion.div>
 				</div>
 			</div>
 		</div>

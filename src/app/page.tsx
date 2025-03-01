@@ -2,15 +2,11 @@ import * as motion from 'motion/react-client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MosaicGallery } from '@/components/mosaic-gallery';
-import { Sidebar } from '@/components/layout/sidebar';
 
 // Server Component for SEO benefits
 export default function Home() {
 	return (
 		<div className='flex flex-col md:flex-row min-h-screen'>
-			{/* Sidebar Navigation */}
-			<Sidebar currentPath='/' />
-
 			{/* Main Content */}
 			<motion.div
 				className='flex-1 md:ml-64 lg:ml-72'
