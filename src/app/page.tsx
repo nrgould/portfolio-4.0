@@ -1,288 +1,438 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Shell } from '@/components/layout/shell';
-import { Button } from '@/components/ui/button';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
-import { Separator } from '@/components/ui/separator';
-import { motion } from 'motion';
 
 export default function Home() {
 	return (
-		<Shell>
-			{/* Hero Section */}
-			<section className='relative w-full'>
-				<div className='relative h-[90vh] w-full'>
-					<Image
-						src='/images/optimized_images/lifestyle_product_majiang_furniture_set.jpg'
-						alt='Hero image showcasing lifestyle photography'
-						fill
-						priority
-						className='object-cover'
-					/>
-					<div className='absolute inset-0 bg-background/60 backdrop-blur-[2px]' />
-					<div className='container absolute inset-0 flex flex-col items-center justify-center text-center md:items-start md:text-left max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-						<h1 className='text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl'>
-							Capturing Life's
-							<br />
-							<span className='text-primary'>
-								Beautiful Moments
-							</span>
-						</h1>
-						<p className='mt-6 max-w-[600px] text-lg text-muted-foreground'>
-							Professional product and lifestyle photography that
-							tells your brand's story with clarity and emotion.
-						</p>
-						<div className='mt-8 flex gap-4'>
-							<Button asChild size='lg'>
-								<Link href='/portfolio'>View Portfolio</Link>
-							</Button>
-							<Button variant='outline' asChild size='lg'>
-								<Link href='/contact'>Get in Touch</Link>
-							</Button>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			{/* Featured Work */}
-			<section className='w-full py-16 md:py-24'>
-				<div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-					<div className='mb-12 text-center'>
-						<h2 className='mb-3 text-3xl font-bold md:text-4xl'>
-							Featured Work
-						</h2>
-						<p className='mx-auto max-w-[700px] text-muted-foreground'>
-							Showcasing a blend of product and lifestyle
-							photography that demonstrates quality, attention to
-							detail, and storytelling.
-						</p>
-					</div>
-
-					<div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
-						{featuredProjects.map((project, index) => (
-							<Link
-								key={index}
-								href={`/portfolio#${project.id}`}
-								className='group overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md'
-							>
-								<div className='overflow-hidden'>
-									<AspectRatio ratio={4 / 5}>
-										<Image
-											src={project.image}
-											alt={project.title}
-											fill
-											className='object-cover transition-transform duration-500 group-hover:scale-105'
-										/>
-									</AspectRatio>
-								</div>
-								<div className='p-4'>
-									<h3 className='text-xl font-medium'>
-										{project.title}
-									</h3>
-									<p className='mt-2 text-sm text-muted-foreground'>
-										{project.description}
-									</p>
-								</div>
-							</Link>
-						))}
-					</div>
-
-					<div className='mt-12 text-center'>
-						<Button asChild variant='outline' size='lg'>
-							<Link href='/portfolio'>See More Work</Link>
-						</Button>
-					</div>
-				</div>
-			</section>
-
-			{/* About Preview */}
-			<section className='w-full bg-muted py-16 md:py-24'>
-				<div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-					<div className='grid grid-cols-1 items-center gap-12 md:grid-cols-2'>
-						<div>
-							<div className='rounded-lg overflow-hidden'>
+		<div className='flex flex-col md:flex-row min-h-screen'>
+			{/* Left Side Navigation */}
+			<div className='md:w-64 lg:w-72 md:fixed md:h-screen p-8 flex flex-col justify-between'>
+				<div>
+					{/* Logo */}
+					<div className='mb-12'>
+						<Link href='/' className='block'>
+							<div className='w-16 h-16 relative mb-4'>
 								<Image
-									src='/images/optimized_images/portrait_thomas_stockholm_street_sunset.jpg'
-									alt='Photographer portrait'
-									width={600}
-									height={800}
-									className='object-cover object-center'
+									src='/images/logo.png'
+									alt='Nicholas Gould Photography'
+									width={64}
+									height={64}
+									className='object-contain'
 								/>
 							</div>
-						</div>
-						<div>
-							<h2 className='mb-3 text-3xl font-bold md:text-4xl'>
-								About Nicholas
-							</h2>
-							<p className='mt-4 text-muted-foreground'>
-								I'm a professional photographer specializing in
-								product and lifestyle photography. With over 10
-								years of experience, I've worked with brands to
-								create imagery that connects with their audience
-								and tells their unique story.
-							</p>
-							<p className='mt-4 text-muted-foreground'>
-								My approach combines technical precision with an
-								artistic eye to capture the essence of your
-								products and the lifestyle they represent.
-							</p>
-							<div className='mt-8'>
-								<Button asChild variant='outline'>
-									<Link href='/about'>
-										Learn More About Me
-									</Link>
-								</Button>
-							</div>
-						</div>
+							<h1 className='text-lg font-light tracking-wide'>
+								Nicholas Gould
+							</h1>
+						</Link>
 					</div>
+
+					{/* Main Navigation */}
+					<nav className='space-y-6'>
+						<Link
+							href='/photography'
+							className='block text-foreground font-light tracking-wide text-sm hover:text-primary transition-colors'
+						>
+							PHOTOGRAPHY
+						</Link>
+						<Link
+							href='/case-studies'
+							className='block text-muted-foreground font-light tracking-wide text-sm hover:text-primary transition-colors'
+						>
+							CASE STUDIES
+						</Link>
+						<Link
+							href='/about'
+							className='block text-muted-foreground font-light tracking-wide text-sm hover:text-primary transition-colors'
+						>
+							ABOUT
+						</Link>
+						<Link
+							href='/contact'
+							className='block text-muted-foreground font-light tracking-wide text-sm hover:text-primary transition-colors'
+						>
+							CONTACT
+						</Link>
+					</nav>
 				</div>
-			</section>
 
-			{/* Services */}
-			<section className='w-full py-16 md:py-24'>
-				<div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-					<div className='mb-12 text-center'>
-						<h2 className='mb-3 text-3xl font-bold md:text-4xl'>
-							Services
-						</h2>
-						<p className='mx-auto max-w-[700px] text-muted-foreground'>
-							Professional photography services tailored to your
-							brand's unique needs.
-						</p>
-					</div>
-
-					<div className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3'>
-						{services.map((service, index) => (
-							<div
-								key={index}
-								className='rounded-lg border bg-card p-6'
+				{/* Social Links */}
+				<div className='hidden md:block'>
+					<div className='flex space-x-4 mb-4'>
+						<a
+							href='https://instagram.com'
+							target='_blank'
+							rel='noopener noreferrer'
+							className='text-muted-foreground hover:text-foreground'
+						>
+							<svg
+								xmlns='http://www.w3.org/2000/svg'
+								width='18'
+								height='18'
+								viewBox='0 0 24 24'
+								fill='none'
+								stroke='currentColor'
+								strokeWidth='1.5'
+								strokeLinecap='round'
+								strokeLinejoin='round'
 							>
-								<div className='mb-4 text-primary'>
-									{service.icon}
-								</div>
-								<h3 className='text-xl font-medium'>
-									{service.title}
-								</h3>
-								<p className='mt-2 text-muted-foreground'>
-									{service.description}
-								</p>
-							</div>
-						))}
+								<rect
+									width='20'
+									height='20'
+									x='2'
+									y='2'
+									rx='5'
+									ry='5'
+								/>
+								<path d='M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z' />
+								<line x1='17.5' x2='17.51' y1='6.5' y2='6.5' />
+							</svg>
+						</a>
+						<a
+							href='https://linkedin.com'
+							target='_blank'
+							rel='noopener noreferrer'
+							className='text-muted-foreground hover:text-foreground'
+						>
+							<svg
+								xmlns='http://www.w3.org/2000/svg'
+								width='18'
+								height='18'
+								viewBox='0 0 24 24'
+								fill='none'
+								stroke='currentColor'
+								strokeWidth='1.5'
+								strokeLinecap='round'
+								strokeLinejoin='round'
+							>
+								<path d='M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z' />
+								<rect width='4' height='12' x='2' y='9' />
+								<circle cx='4' cy='4' r='2' />
+							</svg>
+						</a>
+						<a
+							href='https://behance.net'
+							target='_blank'
+							rel='noopener noreferrer'
+							className='text-muted-foreground hover:text-foreground'
+						>
+							<svg
+								xmlns='http://www.w3.org/2000/svg'
+								width='18'
+								height='18'
+								viewBox='0 0 24 24'
+								fill='none'
+								stroke='currentColor'
+								strokeWidth='1.5'
+								strokeLinecap='round'
+								strokeLinejoin='round'
+							>
+								<path d='M1 12h6v4H1z' />
+								<path d='M8 8h6v8H8z' />
+								<path d='M15 4h6v12h-6z' />
+							</svg>
+						</a>
 					</div>
-				</div>
-			</section>
-
-			{/* Contact CTA */}
-			<section className='w-full bg-muted py-16 md:py-24'>
-				<div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
-					<h2 className='mb-3 text-3xl font-bold md:text-4xl'>
-						Let's Work Together
-					</h2>
-					<p className='mx-auto mt-4 max-w-[600px] text-muted-foreground'>
-						Ready to elevate your brand with stunning visuals? Get
-						in touch to discuss your project and how we can bring
-						your vision to life.
+					<p className='text-xs text-muted-foreground'>
+						© {new Date().getFullYear()} Nicholas Gould
 					</p>
-					<div className='mt-8'>
-						<Button asChild size='lg'>
-							<Link href='/contact'>Get in Touch</Link>
-						</Button>
+				</div>
+			</div>
+
+			{/* Mosaic Gallery - Main Content */}
+			<div className='flex-1 md:ml-64 lg:ml-72'>
+				<div className='mosaic-grid p-2 md:p-4'>
+					{/* Row 1 */}
+					<div className='mosaic-item mosaic-item-1'>
+						<Link
+							href='/portfolio/eight-angles-1'
+							className='group block h-full'
+						>
+							<div className='relative h-full overflow-hidden'>
+								<Image
+									src='/images/optimized_images/product_lifestyle_eight_angles1.jpg'
+									alt='Eight Angles Collection'
+									fill
+									sizes='(max-width: 768px) 100vw, 50vw'
+									className='object-cover transition-transform duration-700 group-hover:scale-105'
+								/>
+								<div className='absolute inset-0 bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/30 group-hover:opacity-100' />
+								<div className='absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+									<span className='text-white text-lg font-light'>
+										Eight Angles Collection
+									</span>
+								</div>
+							</div>
+						</Link>
+					</div>
+
+					<div className='mosaic-item mosaic-item-2'>
+						<Link
+							href='/portfolio/smartwool-1'
+							className='group block h-full'
+						>
+							<div className='relative h-full overflow-hidden'>
+								<Image
+									src='/images/optimized_images/lifestyle_smartwool_jacket.jpg'
+									alt='Smartwool Jacket'
+									fill
+									sizes='(max-width: 768px) 100vw, 50vw'
+									className='object-cover transition-transform duration-700 group-hover:scale-105'
+								/>
+								<div className='absolute inset-0 bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/30 group-hover:opacity-100' />
+								<div className='absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+									<span className='text-white text-lg font-light'>
+										Smartwool Jacket
+									</span>
+								</div>
+							</div>
+						</Link>
+					</div>
+
+					{/* Row 2 */}
+					<div className='mosaic-item mosaic-item-3'>
+						<Link
+							href='/portfolio/ravens-brew'
+							className='group block h-full'
+						>
+							<div className='relative h-full overflow-hidden'>
+								<Image
+									src='/images/optimized_images/product_lifestyle_ravens_brew_hero.jpg'
+									alt='Ravens Brew Coffee'
+									fill
+									sizes='(max-width: 768px) 100vw, 33vw'
+									className='object-cover transition-transform duration-700 group-hover:scale-105'
+								/>
+								<div className='absolute inset-0 bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/30 group-hover:opacity-100' />
+								<div className='absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+									<span className='text-white text-lg font-light'>
+										Ravens Brew Coffee
+									</span>
+								</div>
+							</div>
+						</Link>
+					</div>
+
+					<div className='mosaic-item mosaic-item-4'>
+						<Link
+							href='/portfolio/smartwool-2'
+							className='group block h-full'
+						>
+							<div className='relative h-full overflow-hidden'>
+								<Image
+									src='/images/optimized_images/lifestyle_woman_hiking_with_smartwool_socks.jpg'
+									alt='Smartwool Hiking'
+									fill
+									sizes='(max-width: 768px) 100vw, 33vw'
+									className='object-cover transition-transform duration-700 group-hover:scale-105'
+								/>
+								<div className='absolute inset-0 bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/30 group-hover:opacity-100' />
+								<div className='absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+									<span className='text-white text-lg font-light'>
+										Smartwool Hiking
+									</span>
+								</div>
+							</div>
+						</Link>
+					</div>
+
+					<div className='mosaic-item mosaic-item-5'>
+						<Link
+							href='/portfolio/eight-angles-2'
+							className='group block h-full'
+						>
+							<div className='relative h-full overflow-hidden'>
+								<Image
+									src='/images/optimized_images/product_lifestyle_eight_angles2.jpg'
+									alt='Eight Angles Lifestyle'
+									fill
+									sizes='(max-width: 768px) 100vw, 33vw'
+									className='object-cover transition-transform duration-700 group-hover:scale-105'
+								/>
+								<div className='absolute inset-0 bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/30 group-hover:opacity-100' />
+								<div className='absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+									<span className='text-white text-lg font-light'>
+										Eight Angles Lifestyle
+									</span>
+								</div>
+							</div>
+						</Link>
+					</div>
+
+					{/* Row 3 */}
+					<div className='mosaic-item mosaic-item-6'>
+						<Link
+							href='/portfolio/new-image-1'
+							className='group block h-full'
+						>
+							<div className='relative h-full overflow-hidden'>
+								<Image
+									src='/images/R6II6459-Edit.jpg'
+									alt='Product Detail'
+									fill
+									sizes='(max-width: 768px) 100vw, 25vw'
+									className='object-cover transition-transform duration-700 group-hover:scale-105'
+								/>
+								<div className='absolute inset-0 bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/30 group-hover:opacity-100' />
+								<div className='absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+									<span className='text-white text-lg font-light'>
+										Product Detail
+									</span>
+								</div>
+							</div>
+						</Link>
+					</div>
+
+					<div className='mosaic-item mosaic-item-7'>
+						<Link
+							href='/portfolio/eight-angles-3'
+							className='group block h-full'
+						>
+							<div className='relative h-full overflow-hidden'>
+								<Image
+									src='/images/optimized_images/product_lifestyle_eight_angles3.jpg'
+									alt='Eight Angles Detail'
+									fill
+									sizes='(max-width: 768px) 100vw, 25vw'
+									className='object-cover transition-transform duration-700 group-hover:scale-105'
+								/>
+								<div className='absolute inset-0 bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/30 group-hover:opacity-100' />
+								<div className='absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+									<span className='text-white text-lg font-light'>
+										Eight Angles Detail
+									</span>
+								</div>
+							</div>
+						</Link>
+					</div>
+
+					<div className='mosaic-item mosaic-item-8'>
+						<Link
+							href='/portfolio/new-image-2'
+							className='group block h-full'
+						>
+							<div className='relative h-full overflow-hidden'>
+								<Image
+									src='/images/R6II6399-Edit.jpg'
+									alt='Studio Photography'
+									fill
+									sizes='(max-width: 768px) 100vw, 25vw'
+									className='object-cover transition-transform duration-700 group-hover:scale-105'
+								/>
+								<div className='absolute inset-0 bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/30 group-hover:opacity-100' />
+								<div className='absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+									<span className='text-white text-lg font-light'>
+										Studio Photography
+									</span>
+								</div>
+							</div>
+						</Link>
+					</div>
+
+					<div className='mosaic-item mosaic-item-9'>
+						<Link
+							href='/portfolio/smartwool-3'
+							className='group block h-full'
+						>
+							<div className='relative h-full overflow-hidden'>
+								<Image
+									src='/images/optimized_images/lifestyle_holding_smartwool_socks.jpg'
+									alt='Smartwool Socks'
+									fill
+									sizes='(max-width: 768px) 100vw, 25vw'
+									className='object-cover transition-transform duration-700 group-hover:scale-105'
+								/>
+								<div className='absolute inset-0 bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/30 group-hover:opacity-100' />
+								<div className='absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+									<span className='text-white text-lg font-light'>
+										Smartwool Socks
+									</span>
+								</div>
+							</div>
+						</Link>
 					</div>
 				</div>
-			</section>
-		</Shell>
+
+				{/* Mobile Footer */}
+				<div className='md:hidden p-8 mt-4'>
+					<div className='flex justify-center space-x-6 mb-4'>
+						<a
+							href='https://instagram.com'
+							target='_blank'
+							rel='noopener noreferrer'
+							className='text-muted-foreground hover:text-foreground'
+						>
+							<svg
+								xmlns='http://www.w3.org/2000/svg'
+								width='20'
+								height='20'
+								viewBox='0 0 24 24'
+								fill='none'
+								stroke='currentColor'
+								strokeWidth='1.5'
+								strokeLinecap='round'
+								strokeLinejoin='round'
+							>
+								<rect
+									width='20'
+									height='20'
+									x='2'
+									y='2'
+									rx='5'
+									ry='5'
+								/>
+								<path d='M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z' />
+								<line x1='17.5' x2='17.51' y1='6.5' y2='6.5' />
+							</svg>
+						</a>
+						<a
+							href='https://linkedin.com'
+							target='_blank'
+							rel='noopener noreferrer'
+							className='text-muted-foreground hover:text-foreground'
+						>
+							<svg
+								xmlns='http://www.w3.org/2000/svg'
+								width='20'
+								height='20'
+								viewBox='0 0 24 24'
+								fill='none'
+								stroke='currentColor'
+								strokeWidth='1.5'
+								strokeLinecap='round'
+								strokeLinejoin='round'
+							>
+								<path d='M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z' />
+								<rect width='4' height='12' x='2' y='9' />
+								<circle cx='4' cy='4' r='2' />
+							</svg>
+						</a>
+						<a
+							href='https://behance.net'
+							target='_blank'
+							rel='noopener noreferrer'
+							className='text-muted-foreground hover:text-foreground'
+						>
+							<svg
+								xmlns='http://www.w3.org/2000/svg'
+								width='20'
+								height='20'
+								viewBox='0 0 24 24'
+								fill='none'
+								stroke='currentColor'
+								strokeWidth='1.5'
+								strokeLinecap='round'
+								strokeLinejoin='round'
+							>
+								<path d='M1 12h6v4H1z' />
+								<path d='M8 8h6v8H8z' />
+								<path d='M15 4h6v12h-6z' />
+							</svg>
+						</a>
+					</div>
+					<p className='text-xs text-muted-foreground text-center'>
+						© {new Date().getFullYear()} Nicholas Gould
+					</p>
+				</div>
+			</div>
+		</div>
 	);
 }
-
-// Sample featured projects
-const featuredProjects = [
-	{
-		id: 'product-lifestyle-ravens',
-		title: 'Ravens Brew Coffee',
-		description: 'Product and lifestyle photography for coffee brand.',
-		image: '/images/optimized_images/product_lifestyle_ravens_brew_hero.jpg',
-	},
-	{
-		id: 'lifestyle-furniture',
-		title: 'Majiang Furniture Collection',
-		description: 'Minimalist furniture in natural settings.',
-		image: '/images/optimized_images/product_majiang_furniture_set_above.jpg',
-	},
-	{
-		id: 'lifestyle-product-outdoors',
-		title: 'Outdoor Apparel',
-		description: 'Lifestyle photography for outdoor brand.',
-		image: '/images/optimized_images/4_lifestyle_product_aileen_wearing_helly_hansen_jacket_lofoten_islands_norway.jpg',
-	},
-];
-
-// Services
-const services = [
-	{
-		title: 'Product Photography',
-		description:
-			'Studio and contextual photography that showcases your products in their best light.',
-		icon: (
-			<svg
-				xmlns='http://www.w3.org/2000/svg'
-				width='24'
-				height='24'
-				viewBox='0 0 24 24'
-				fill='none'
-				stroke='currentColor'
-				strokeWidth='2'
-				strokeLinecap='round'
-				strokeLinejoin='round'
-				className='h-8 w-8'
-			>
-				<path d='M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z' />
-			</svg>
-		),
-	},
-	{
-		title: 'Lifestyle Photography',
-		description:
-			'Authentic scenarios that show your products in their natural environment and in use.',
-		icon: (
-			<svg
-				xmlns='http://www.w3.org/2000/svg'
-				width='24'
-				height='24'
-				viewBox='0 0 24 24'
-				fill='none'
-				stroke='currentColor'
-				strokeWidth='2'
-				strokeLinecap='round'
-				strokeLinejoin='round'
-				className='h-8 w-8'
-			>
-				<rect width='18' height='18' x='3' y='3' rx='2' ry='2' />
-				<circle cx='9' cy='9' r='2' />
-				<path d='m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21' />
-			</svg>
-		),
-	},
-	{
-		title: 'Brand Campaigns',
-		description:
-			'Cohesive visual storytelling that aligns with your brand identity and marketing goals.',
-		icon: (
-			<svg
-				xmlns='http://www.w3.org/2000/svg'
-				width='24'
-				height='24'
-				viewBox='0 0 24 24'
-				fill='none'
-				stroke='currentColor'
-				strokeWidth='2'
-				strokeLinecap='round'
-				strokeLinejoin='round'
-				className='h-8 w-8'
-			>
-				<rect width='18' height='18' x='3' y='3' rx='2' />
-				<path d='M3 9h18' />
-				<path d='M9 21V9' />
-			</svg>
-		),
-	},
-];
