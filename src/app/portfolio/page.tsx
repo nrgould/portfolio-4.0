@@ -108,6 +108,12 @@ const portfolioItems = [
 		categories: ['product', 'lifestyle'],
 		image: '/images/optimized_images/1_product_lifestyle_ravens_brew_deadmans_reach_on_stump.jpg',
 	},
+	{
+		id: 'ravens-brew-5',
+		title: 'Ravens Brew Coffee Cup',
+		categories: ['product', 'lifestyle'],
+		image: '/images/optimized_images/lifestyle_product_ravens_brew_deadmans_reach_coffee.jpg',
+	},
 
 	// Studio Product Photography
 	{
@@ -160,8 +166,32 @@ const portfolioItems = [
 		categories: ['lifestyle'],
 		image: '/images/optimized_images/lifestyle_fjallraven_raven_28_during_rainy_hike.jpg',
 	},
+	{
+		id: 'outdoor-apparel-3',
+		title: 'Winter Fashion in Sweden',
+		categories: ['lifestyle'],
+		image: '/images/optimized_images/lifestyle_product_roland_dressed_warmly_in_sweden.jpg',
+	},
+	{
+		id: 'outdoor-apparel-4',
+		title: 'Beach Hiking at Sunset',
+		categories: ['lifestyle'],
+		image: '/images/optimized_images/2_lifestyle_hiking_on_a_beach_sunset_fjallraven.jpg',
+	},
+	{
+		id: 'fashion-1',
+		title: 'Acne Studios Bag',
+		categories: ['lifestyle'],
+		image: '/images/optimized_images/7_lifestyle_aileen_holding_acne_studios_bag_stockholm.jpg',
+	},
+	{
+		id: 'fashion-2',
+		title: 'Satila Beanie in Lofoten',
+		categories: ['lifestyle'],
+		image: '/images/optimized_images/lifestyle_portrait_emily_wearing_satila_beanie_lofoten_islands_norway.jpg',
+	},
 
-	// Portraits
+	// Portraits - Expanded section
 	{
 		id: 'portrait-1',
 		title: 'Portrait at Sunset',
@@ -180,8 +210,50 @@ const portfolioItems = [
 		categories: ['portrait'],
 		image: '/images/optimized_images/1_portrait_couple_looking_at_eachother_sunset.jpg',
 	},
+	{
+		id: 'portrait-4',
+		title: 'Cherry Blossom Portrait 2',
+		categories: ['portrait'],
+		image: '/images/optimized_images/portrait_girl_posing_with_cherry_blossoms_2.jpg',
+	},
+	{
+		id: 'portrait-5',
+		title: 'Fall Leaves Portrait',
+		categories: ['portrait'],
+		image: '/images/optimized_images/portrait_girl_posing_with_fall_leaves.jpg',
+	},
+	{
+		id: 'portrait-6',
+		title: 'Horse Portrait',
+		categories: ['portrait'],
+		image: '/images/optimized_images/portrait_horse_ab.jpg',
+	},
+	{
+		id: 'portrait-7',
+		title: 'Snow Sunset Portrait',
+		categories: ['portrait'],
+		image: '/images/optimized_images/portrait_lifestyle_aileen_in_snow_sunset_in_sweden.jpg',
+	},
+	{
+		id: 'portrait-8',
+		title: 'Copenhagen Sunset Portrait',
+		categories: ['portrait'],
+		image: '/images/optimized_images/portrait_lifestyle_emilie_copenhagen_sunset.jpg',
+	},
+	{
+		id: 'portrait-9',
+		title: 'Couple Dancing at Sunset',
+		categories: ['portrait'],
+		image: '/images/optimized_images/2_portrait_couple_dancing_at_sunset.jpg',
+	},
+	{
+		id: 'portrait-10',
+		title: 'Portrait in Black Dress',
+		categories: ['portrait'],
+		image: '/images/optimized_images/2_portrait_black_dress.jpg',
+	},
 
-	// Landscapes
+	// Landscapes - Expanded section
 	{
 		id: 'landscape-1',
 		title: 'Dolomites Santa Magdalena',
@@ -198,7 +270,49 @@ const portfolioItems = [
 		id: 'landscape-3',
 		title: 'Bavarian Alps Sunset',
 		categories: ['landscape'],
-		image: '/images/optimized_images/landscape_bavarian_alps_sunset_in_grainau.jpg',
+		image: '/images/optimized_images/landscape_bavarian_alps_sunset.jpg',
+	},
+	{
+		id: 'landscape-4',
+		title: 'Dolomites Seceda',
+		categories: ['landscape'],
+		image: '/images/optimized_images/landscape_dolomites_seceda.jpg',
+	},
+	{
+		id: 'landscape-5',
+		title: 'Dolomites Sunset',
+		categories: ['landscape'],
+		image: '/images/optimized_images/landscape_dolomites_sunset.jpg',
+	},
+	{
+		id: 'landscape-6',
+		title: 'Heart Hut in Norway',
+		categories: ['landscape'],
+		image: '/images/optimized_images/landscape_heart_hut_in_norway.jpg',
+	},
+	{
+		id: 'landscape-7',
+		title: 'Dolomites Cadini di Misurina',
+		categories: ['landscape'],
+		image: '/images/optimized_images/landscape_dolomites_cadini_di_misurina.jpg',
+	},
+	{
+		id: 'landscape-8',
+		title: 'Hiking in the Dolomites',
+		categories: ['landscape'],
+		image: '/images/optimized_images/landscape_dolomites_man_hiking_with_mountain_background_dusk.jpg',
+	},
+	{
+		id: 'landscape-9',
+		title: 'Bridge in Lofoten Islands',
+		categories: ['landscape'],
+		image: '/images/optimized_images/2_landscape_bridge_in_lofoten_islands.jpg',
+	},
+	{
+		id: 'landscape-10',
+		title: 'Lago di Braies',
+		categories: ['landscape'],
+		image: '/images/optimized_images/3_landscape_lago_di_braies.jpg',
 	},
 ];
 

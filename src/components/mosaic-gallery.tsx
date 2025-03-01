@@ -58,6 +58,42 @@ const galleryItems = [
 		href: '/case-studies/ravens-brew',
 		image: '/images/optimized_images/1_product_lifestyle_ravens_brew_deadmans_reach_on_stump.jpg',
 	},
+	{
+		id: 10,
+		title: 'Dolomites Santa Magdalena',
+		href: '/photography?category=landscape',
+		image: '/images/optimized_images/landscape_dolomites_santa_magdalena.jpg',
+	},
+	{
+		id: 11,
+		title: 'Portrait at Sunset',
+		href: '/photography?category=portrait',
+		image: '/images/optimized_images/portrait_thomas_stockholm_street_sunset.jpg',
+	},
+	{
+		id: 12,
+		title: 'Cherry Blossom Portrait',
+		href: '/photography?category=portrait',
+		image: '/images/optimized_images/portrait_girl_posing_with_cherry_blossoms_1.jpg',
+	},
+	{
+		id: 13,
+		title: 'Lofoten Islands Church',
+		href: '/photography?category=landscape',
+		image: '/images/optimized_images/1_landscape_snowy_church_lofoten_islands_norway.jpg',
+	},
+	{
+		id: 14,
+		title: 'Couple at Sunset',
+		href: '/photography?category=portrait',
+		image: '/images/optimized_images/1_portrait_couple_looking_at_eachother_sunset.jpg',
+	},
+	{
+		id: 15,
+		title: 'Helly Hansen Jacket',
+		href: '/photography?category=lifestyle',
+		image: '/images/optimized_images/4_lifestyle_product_aileen_wearing_helly_hansen_jacket_lofoten_islands_norway.jpg',
+	},
 ];
 
 export function MosaicGallery() {

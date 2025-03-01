@@ -6,7 +6,7 @@ export function Sidebar({ currentPath }: { currentPath: string }) {
 	return (
 		<>
 			{/* Left Side Navigation */}
-			<div className='md:w-64 lg:w-72 md:fixed md:h-screen p-8 flex flex-col justify-between'>
+			<div className='md:w-64 lg:w-72 md:fixed md:h-screen p-8 flex flex-col justify-between border-r border-zinc-800'>
 				<div>
 					{/* Logo */}
 					<div className='mb-12'>
@@ -92,7 +92,7 @@ export function Sidebar({ currentPath }: { currentPath: string }) {
 				</div>
 
 				{/* Social Links - Hidden on Mobile */}
-				<motion.div
+				{/* <motion.div
 					className='hidden md:block'
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
@@ -175,7 +175,7 @@ export function Sidebar({ currentPath }: { currentPath: string }) {
 							</svg>
 						</a>
 					</div>
-				</motion.div>
+				</motion.div> */}
 			</div>
 		</>
 	);
