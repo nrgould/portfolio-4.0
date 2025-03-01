@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Montserrat } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Header } from '@/components/layout/header';
@@ -15,8 +15,13 @@ import { Footer } from '@/components/layout/footer';
 // 	subsets: ['latin'],
 // });
 
-const inter = Inter({
-	variable: '--font-inter',
+// const inter = Inter({
+// 	variable: '--font-inter',
+// 	subsets: ['latin'],
+// });
+
+const montserrat = Montserrat({
+	variable: '--font-montserrat',
 	subsets: ['latin'],
 });
 
@@ -39,7 +44,7 @@ export default function RootLayout({
 	return (
 		<html lang='en' suppressHydrationWarning>
 			<body
-				className={`${inter.variable} antialiased min-h-screen flex flex-col`}
+				className={`${montserrat.variable} antialiased min-h-screen flex flex-col`}
 			>
 				<ThemeProvider
 					attribute='class'
