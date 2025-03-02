@@ -1,3 +1,5 @@
+import { Button } from '@/components/ui/button';
+import { email, location, socialLinks } from '@/lib/constants';
 import * as motion from 'motion/react-client';
 
 export default function Contact() {
@@ -48,10 +50,10 @@ export default function Contact() {
 								<h2 className='text-lg'>Email</h2>
 								<p className='text-muted-foreground'>
 									<a
-										href='mailto:hello@nicholasgould.com'
+										href={`mailto:${email}`}
 										className='hover:text-foreground transition-colors'
 									>
-										hello@nicholasgouldphoto.com
+										{email}
 									</a>
 								</p>
 							</motion.div>
@@ -65,7 +67,7 @@ export default function Contact() {
 							>
 								<h2 className='text-lg'>Location</h2>
 								<p className='text-muted-foreground'>
-									Raleigh, NC - Available to travel
+									{location}
 								</p>
 							</motion.div>
 
@@ -79,7 +81,7 @@ export default function Contact() {
 								<h2 className='text-lg'>Follow</h2>
 								<div className='flex space-x-4'>
 									<a
-										href='https://instagram.com'
+										href={socialLinks[0].url}
 										target='_blank'
 										rel='noopener noreferrer'
 										className='text-muted-foreground hover:text-foreground'
@@ -113,7 +115,7 @@ export default function Contact() {
 										</svg>
 									</a>
 									<a
-										href='https://linkedin.com'
+										href={socialLinks[3].url}
 										target='_blank'
 										rel='noopener noreferrer'
 										className='text-muted-foreground hover:text-foreground'
@@ -140,7 +142,7 @@ export default function Contact() {
 										</svg>
 									</a>
 									<a
-										href='https://behance.net'
+										href={socialLinks[1].url}
 										target='_blank'
 										rel='noopener noreferrer'
 										className='text-muted-foreground hover:text-foreground'
@@ -239,12 +241,13 @@ export default function Contact() {
 									></textarea>
 								</div>
 								<div>
-									<button
+									<Button
 										type='submit'
+										variant='outline'
 										className='px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors'
 									>
 										Send Message
-									</button>
+									</Button>
 								</div>
 							</motion.form>
 						</motion.div>
