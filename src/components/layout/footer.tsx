@@ -5,7 +5,7 @@ export function Footer() {
 	const currentYear = new Date().getFullYear();
 
 	return (
-		<footer className='w-full py-12 relative'>
+		<footer className='w-full py-12 relative mt-12'>
 			{/* Leaves background */}
 			<div className='absolute inset-0 overflow-hidden z-0'>
 				<Image

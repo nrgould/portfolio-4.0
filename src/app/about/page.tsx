@@ -6,10 +6,10 @@ import { Button } from '@/components/ui/button';
 
 export default function About() {
 	return (
-		<div className='flex flex-col md:flex-row min-h-screen'>
+		<div className='flex flex-col min-h-screen'>
 			{/* Main Content */}
-			<div className='flex-1 md:ml-64 lg:ml-72 p-4 md:p-8'>
-				<div className='max-w-full md:max-w-2/3 lg:max-w-1/2 mx-auto'>
+			<div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-32'>
+				<div className='max-w-4xl mx-auto'>
 					<motion.h1
 						className='text-2xl mb-8'
 						initial={{ opacity: 0, y: 20 }}

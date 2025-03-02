@@ -510,57 +510,54 @@ export default function Photography() {
 	const [selectedTab, setSelectedTab] = useState('all');
 
 	return (
-		<div className='flex flex-col md:flex-row min-h-screen'>
-			{/* Main Content */}
-			<div className='flex-1 md:ml-64 lg:ml-72 p-4 md:p-8'>
-				<motion.h1
-					className='text-2xl mb-8'
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.2 }}
-				>
-					Photography
-				</motion.h1>
+		<div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-32'>
+			<motion.h1
+				className='text-2xl mb-8'
+				initial={{ opacity: 0, y: 20 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.6, delay: 0.2 }}
+			>
+				Photography
+			</motion.h1>
 
-				<Tabs
-					defaultValue='all'
-					value={selectedTab}
-					onValueChange={setSelectedTab}
-					className='w-full'
-				>
-					<TabsList className='mb-8 flex flex-wrap'>
-						<TabsTrigger value='all'>All</TabsTrigger>
-						<TabsTrigger value='product'>Product</TabsTrigger>
-						<TabsTrigger value='lifestyle'>Lifestyle</TabsTrigger>
-						<TabsTrigger value='portrait'>Portrait</TabsTrigger>
-						<TabsTrigger value='landscape'>Landscape</TabsTrigger>
-					</TabsList>
+			<Tabs
+				defaultValue='all'
+				value={selectedTab}
+				onValueChange={setSelectedTab}
+				className='w-full'
+			>
+				<TabsList className='mb-8 flex flex-wrap'>
+					<TabsTrigger value='all'>All</TabsTrigger>
+					<TabsTrigger value='product'>Product</TabsTrigger>
+					<TabsTrigger value='lifestyle'>Lifestyle</TabsTrigger>
+					<TabsTrigger value='portrait'>Portrait</TabsTrigger>
+					<TabsTrigger value='landscape'>Landscape</TabsTrigger>
+				</TabsList>
 
-					<TabsContent value='all' className='mt-0'>
-						<PhotoGallery photos={allPhotos} />
-					</TabsContent>
+				<TabsContent value='all' className='mt-0'>
+					<PhotoGallery photos={allPhotos} />
+				</TabsContent>
 
-					<TabsContent value='product' className='mt-0'>
-						<PhotoGallery photos={productPhotos} />
-					</TabsContent>
+				<TabsContent value='product' className='mt-0'>
+					<PhotoGallery photos={productPhotos} />
+				</TabsContent>
 
-					<TabsContent value='lifestyle' className='mt-0'>
-						<PhotoGallery photos={lifestylePhotos} />
-					</TabsContent>
+				<TabsContent value='lifestyle' className='mt-0'>
+					<PhotoGallery photos={lifestylePhotos} />
+				</TabsContent>
 
-					<TabsContent value='portrait' className='mt-0'>
-						<PhotoGallery photos={portraitPhotos} />
-					</TabsContent>
+				<TabsContent value='portrait' className='mt-0'>
+					<PhotoGallery photos={portraitPhotos} />
+				</TabsContent>
 
-					<TabsContent value='landscape' className='mt-0'>
-						<PhotoGallery photos={landscapePhotos} />
-					</TabsContent>
-				</Tabs>
-			</div>
+				<TabsContent value='landscape' className='mt-0'>
+					<PhotoGallery photos={landscapePhotos} />
+				</TabsContent>
+			</Tabs>
 
 			{/* Mobile Footer */}
 			<motion.div
-				className='md:hidden p-8 mt-4'
+				className='md:hidden mt-12 mb-8'
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ duration: 0.5, delay: 0.8 }}
