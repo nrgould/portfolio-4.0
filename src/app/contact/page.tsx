@@ -1,10 +1,78 @@
+'use client';
+
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { email, location, socialLinks } from '@/lib/constants';
 import * as motion from 'motion/react-client';
 
 export default function Contact() {
+	const [formData, setFormData] = useState({
+		name: '',
+		email: '',
+		subject: '',
+		message: '',
+	});
+	const [status, setStatus] = useState({
+		submitting: false,
+		submitted: false,
+		success: false,
+		error: '',
+	});
+
+	const handleChange = (
+		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+	) => {
+		const { name, value } = e.target;
+		setFormData((prev) => ({ ...prev, [name]: value }));
+	};
+
+	const handleSubmit = async (e: React.FormEvent) => {
+		e.preventDefault();
+		setStatus({
+			submitting: true,
+			submitted: false,
+			success: false,
+			error: '',
+		});
+
+		try {
+			const response = await fetch('/api/contact', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(formData),
+			});
+
+			const data = await response.json();
+
+			if (!response.ok) {
+				throw new Error(data.error || 'Something went wrong');
+			}
+
+			// Reset form on success
+			setFormData({ name: '', email: '', subject: '', message: '' });
+			setStatus({
+				submitting: false,
+				submitted: true,
+				success: true,
+				error: '',
+			});
+		} catch (error) {
+			setStatus({
+				submitting: false,
+				submitted: true,
+				success: false,
+				error:
+					error instanceof Error
+						? error.message
+						: 'Failed to send message',
+			});
+		}
+	};
+
 	return (
-		<div className='flex flex-col min-h-screen'>
+		<div className='flex flex-col'>
 			{/* Main Content */}
 			<div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-32'>
 				<div className='max-w-4xl mx-auto'>
@@ -179,6 +247,7 @@ export default function Contact() {
 								whileInView={{ opacity: 1 }}
 								transition={{ duration: 0.6, delay: 0.5 }}
 								viewport={{ once: true }}
+								onSubmit={handleSubmit}
 							>
 								<div>
 									<label
@@ -191,6 +260,8 @@ export default function Contact() {
 										type='text'
 										id='name'
 										name='name'
+										value={formData.name}
+										onChange={handleChange}
 										className='w-full p-3 border border-muted-foreground/30 bg-transparent focus:border-foreground focus:outline-none transition-colors'
 										required
 									/>
@@ -206,6 +277,8 @@ export default function Contact() {
 										type='email'
 										id='email'
 										name='email'
+										value={formData.email}
+										onChange={handleChange}
 										className='w-full p-3 border border-muted-foreground/30 bg-transparent focus:border-foreground focus:outline-none transition-colors'
 										required
 									/>
@@ -221,6 +294,8 @@ export default function Contact() {
 										type='text'
 										id='subject'
 										name='subject'
+										value={formData.subject}
+										onChange={handleChange}
 										className='w-full p-3 border border-muted-foreground/30 bg-transparent focus:border-foreground focus:outline-none transition-colors'
 										required
 									/>
@@ -236,17 +311,37 @@ export default function Contact() {
 										id='message'
 										name='message'
 										rows={6}
+										value={formData.message}
+										onChange={handleChange}
 										className='w-full p-3 border border-muted-foreground/30 bg-transparent focus:border-foreground focus:outline-none transition-colors resize-none'
 										required
 									></textarea>
 								</div>
+
+								{status.submitted && status.success && (
+									<div className='p-3 bg-green-500/10 border border-green-500 text-green-500 rounded'>
+										Message sent successfully! I&apos;ll get
+										back to you soon.
+									</div>
+								)}
+
+								{status.submitted && !status.success && (
+									<div className='p-3 bg-red-500/10 border border-red-500 text-red-500 rounded'>
+										{status.error ||
+											'Failed to send message. Please try again.'}
+									</div>
+								)}
+
 								<div>
 									<Button
 										type='submit'
 										variant='outline'
 										className='px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors'
+										disabled={status.submitting}
 									>
-										Send Message
+										{status.submitting
+											? 'Sending...'
+											: 'Send Message'}
 									</Button>
 								</div>
 							</motion.form>
