@@ -51,25 +51,7 @@ export default function Contact() {
 										href='mailto:hello@nicholasgould.com'
 										className='hover:text-foreground transition-colors'
 									>
-										hello@nicholasgould.com
-									</a>
-								</p>
-							</motion.div>
-
-							<motion.div
-								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
-								transition={{ duration: 0.6, delay: 0.6 }}
-								viewport={{ once: true }}
-								className='space-y-2'
-							>
-								<h2 className='text-lg'>Phone</h2>
-								<p className='text-muted-foreground'>
-									<a
-										href='tel:+12065551234'
-										className='hover:text-foreground transition-colors'
-									>
-										(206) 555-1234
+										hello@nicholasgouldphoto.com
 									</a>
 								</p>
 							</motion.div>
@@ -81,11 +63,9 @@ export default function Contact() {
 								viewport={{ once: true }}
 								className='space-y-2'
 							>
-								<h2 className='text-lg'>Studio</h2>
+								<h2 className='text-lg'>Location</h2>
 								<p className='text-muted-foreground'>
-									123 Photography Lane
-									<br />
-									Seattle, WA 98101
+									Raleigh, NC - Available to travel
 								</p>
 							</motion.div>
 

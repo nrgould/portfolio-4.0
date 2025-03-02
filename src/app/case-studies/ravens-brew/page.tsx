@@ -225,11 +225,11 @@ export default function RavensBrewCaseStudy() {
 								transition={{ duration: 0.6, delay: 1.2 }}
 							>
 								The final images were used across Ravens Brew
-								Coffee's marketing channels, including their
-								website, social media, and print materials. The
-								photography helped to elevate their brand image
-								and showcase their products in a way that
-								resonated with their target audience.
+								Coffee&apos;s marketing channels, including
+								their website, social media, and print
+								materials. The photography helped to elevate
+								their brand image and showcase their products in
+								a way that resonated with their target audience.
 							</motion.p>
 						</motion.section>
 
@@ -277,49 +277,6 @@ export default function RavensBrewCaseStudy() {
 								scenes that coffee lovers could relate to,
 								emphasizing the ritual and enjoyment of brewing
 								and drinking quality coffee.
-							</motion.p>
-						</motion.section>
-
-						{/* Client Feedback */}
-						<motion.section
-							initial={{ opacity: 0, y: 30 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.7, delay: 1.1 }}
-						>
-							<motion.h2
-								className='text-xl mb-4'
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ duration: 0.6, delay: 1.2 }}
-							>
-								Client Feedback
-							</motion.h2>
-							<motion.blockquote
-								className='border-l-2 border-primary pl-4 italic text-muted-foreground'
-								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
-								viewport={{ once: true }}
-								transition={{ duration: 0.6, delay: 1.3 }}
-							>
-								"Nicholas captured our products beautifully,
-								highlighting the quality and craftsmanship that
-								goes into our coffee. The images perfectly
-								convey the essence of our brand and have
-								significantly improved our marketing materials.
-								We've seen increased engagement across our
-								platforms since implementing these new
-								photographs."
-							</motion.blockquote>
-							<motion.p
-								className='text-right text-sm text-muted-foreground mt-2'
-								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
-								viewport={{ once: true }}
-								transition={{ duration: 0.6, delay: 1.4 }}
-							>
-								— Marketing Director, Ravens Brew Coffee
 							</motion.p>
 						</motion.section>
 					</div>

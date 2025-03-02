@@ -271,12 +271,12 @@ export default function Home() {
 								</svg>
 							</div>
 							<h3 className='text-xl font-light mb-3'>
-								Brand Photography
+								Portrait Photography
 							</h3>
 							<p className='text-muted-foreground'>
-								Develop a cohesive visual identity with
-								photography that aligns with your brand values
-								and resonates with your target market.
+								Highlight individuality and emotion with
+								striking, authentic portraits that capture
+								personality and presence in every frame
 							</p>
 						</motion.div>
 					</div>

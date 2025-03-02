@@ -95,14 +95,14 @@ export default function EightAnglesCaseStudy() {
 								clean lines and subtle details of each piece.
 								The photography style emphasized negative space,
 								creating a sense of calm sophistication that
-								aligned with the brand's identity.
+								aligned with the brand&apos;s identity.
 							</p>
 							<p className='text-muted-foreground font-light leading-relaxed'>
 								For context shots, I created simple vignettes
 								that suggested how the pieces might be displayed
 								in a home, using neutral backgrounds and
-								complementary props that wouldn't distract from
-								the featured products.
+								complementary props that wouldn&apos;t distract
+								from the featured products.
 							</p>
 						</div>
 					</motion.div>
@@ -178,22 +178,6 @@ export default function EightAnglesCaseStudy() {
 									across the entire collection
 								</li>
 							</ul>
-						</div>
-						<div>
-							<h2 className='text-xl font-light mb-4'>
-								Client Feedback
-							</h2>
-							<p className='text-muted-foreground font-light italic'>
-								"Nicholas understood our aesthetic perfectly.
-								The images capture not just our products, but
-								the essence of our brand philosophy. The clean,
-								thoughtful compositions have significantly
-								elevated our online presence and marketing
-								materials."
-							</p>
-							<p className='text-muted-foreground font-light mt-4'>
-								— Creative Director, Eight Angles
-							</p>
 						</div>
 					</motion.div>
 

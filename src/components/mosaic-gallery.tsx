@@ -94,6 +94,30 @@ const galleryItems = [
 		href: '/photography?category=lifestyle',
 		image: '/images/optimized_images/4_lifestyle_product_aileen_wearing_helly_hansen_jacket_lofoten_islands_norway.jpg',
 	},
+	{
+		id: 16,
+		title: 'Vienna Schönbrunn Palace',
+		href: '/photography?category=landscape',
+		image: '/images/new_images/landscape_vienna_schonnbrunn.jpg',
+	},
+	{
+		id: 17,
+		title: 'Vienna Botanical Garden',
+		href: '/photography?category=landscape',
+		image: '/images/new_images/landscape_vienna_botanical_garden.jpg',
+	},
+	{
+		id: 18,
+		title: 'Vienna Cathedral',
+		href: '/photography?category=landscape',
+		image: '/images/new_images/landscape_vienna_dome.jpg',
+	},
+	{
+		id: 19,
+		title: 'Roman Colosseum',
+		href: '/photography?category=landscape',
+		image: '/images/new_images/landscape_roman_colosseum.jpg',
+	},
 ];
 
 export function MosaicGallery() {

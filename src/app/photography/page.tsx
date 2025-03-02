@@ -47,10 +47,6 @@ const allPhotos: Photo[] = [
 
 	// Portraits
 	{
-		src: '/images/optimized_images/portrait_thomas_stockholm_street_sunset.jpg',
-		alt: 'Portrait at Sunset',
-	},
-	{
 		src: '/images/optimized_images/portrait_girl_posing_with_cherry_blossoms_1.jpg',
 		alt: 'Cherry Blossom Portrait',
 	},
@@ -71,6 +67,22 @@ const allPhotos: Photo[] = [
 	{
 		src: '/images/optimized_images/landscape_bavarian_alps_sunset.jpg',
 		alt: 'Bavarian Alps Sunset',
+	},
+	{
+		src: '/images/new_images/landscape_vienna_schonnbrunn.jpg',
+		alt: 'Vienna Schönbrunn Palace',
+	},
+	{
+		src: '/images/new_images/landscape_vienna_botanical_garden.jpg',
+		alt: 'Vienna Botanical Garden',
+	},
+	{
+		src: '/images/new_images/landscape_vienna_dome.jpg',
+		alt: 'Vienna Cathedral',
+	},
+	{
+		src: '/images/new_images/landscape_roman_colosseum.jpg',
+		alt: 'Roman Colosseum',
 	},
 
 	// Additional Product & Lifestyle
@@ -142,8 +154,6 @@ const productPhotos: Photo[] = [
 		src: '/images/optimized_images/product_lifestyle_eight_angles3.jpg',
 		alt: 'Eight Angles Detail',
 	},
-	{ src: '/images/R6II6459-Edit.jpg', alt: 'Product Detail' },
-	{ src: '/images/R6II6399-Edit.jpg', alt: 'Studio Photography' },
 	{
 		src: '/images/optimized_images/product_majiang_furniture_set_above.jpg',
 		alt: 'Majiang Furniture Set',
@@ -175,6 +185,27 @@ const productPhotos: Photo[] = [
 	{
 		src: '/images/optimized_images/product_lifestyle_one_for_the_fishes2.jpg',
 		alt: 'One For The Fishes Lifestyle',
+	},
+	// Adding brand photos to product category
+	{
+		src: '/images/optimized_images/product_lifestyle_ravens_brew_hero.jpg',
+		alt: 'Ravens Brew Coffee',
+	},
+	{
+		src: '/images/optimized_images/2_product_lifestyle_ravens_brew_ferns.jpg',
+		alt: 'Ravens Brew Coffee Among Ferns',
+	},
+	{
+		src: '/images/optimized_images/product_lifestyle_ravens_brew_indoors.jpg',
+		alt: 'Ravens Brew Coffee Indoors',
+	},
+	{
+		src: '/images/optimized_images/1_product_lifestyle_ravens_brew_deadmans_reach_on_stump.jpg',
+		alt: 'Ravens Brew Deadmans Reach',
+	},
+	{
+		src: '/images/optimized_images/lifestyle_product_ravens_brew_deadmans_reach_coffee.jpg',
+		alt: 'Ravens Brew Deadmans Reach Coffee',
 	},
 ];
 
@@ -225,55 +256,8 @@ const lifestylePhotos: Photo[] = [
 	},
 ];
 
-const brandPhotos: Photo[] = [
-	{
-		src: '/images/optimized_images/product_lifestyle_ravens_brew_hero.jpg',
-		alt: 'Ravens Brew Coffee',
-	},
-	{
-		src: '/images/optimized_images/2_product_lifestyle_ravens_brew_ferns.jpg',
-		alt: 'Ravens Brew Coffee Among Ferns',
-	},
-	{
-		src: '/images/optimized_images/product_lifestyle_ravens_brew_indoors.jpg',
-		alt: 'Ravens Brew Coffee Indoors',
-	},
-	{
-		src: '/images/optimized_images/1_product_lifestyle_ravens_brew_deadmans_reach_on_stump.jpg',
-		alt: 'Ravens Brew Deadmans Reach',
-	},
-	{
-		src: '/images/optimized_images/lifestyle_product_ravens_brew_deadmans_reach_coffee.jpg',
-		alt: 'Ravens Brew Deadmans Reach Coffee',
-	},
-	{
-		src: '/images/optimized_images/lifestyle_smartwool_jacket.jpg',
-		alt: 'Smartwool Jacket',
-	},
-	{
-		src: '/images/optimized_images/lifestyle_woman_hiking_with_smartwool_socks.jpg',
-		alt: 'Smartwool Hiking',
-	},
-	{
-		src: '/images/optimized_images/lifestyle_holding_smartwool_socks.jpg',
-		alt: 'Smartwool Socks',
-	},
-	{
-		src: '/images/optimized_images/product_lifestyle_eight_angles1.jpg',
-		alt: 'Eight Angles Collection',
-	},
-	{
-		src: '/images/optimized_images/product_lifestyle_eight_angles2.jpg',
-		alt: 'Eight Angles Lifestyle',
-	},
-];
-
 // New portrait photos array
 const portraitPhotos: Photo[] = [
-	{
-		src: '/images/optimized_images/portrait_thomas_stockholm_street_sunset.jpg',
-		alt: 'Portrait at Sunset',
-	},
 	{
 		src: '/images/optimized_images/portrait_girl_posing_with_cherry_blossoms_1.jpg',
 		alt: 'Cherry Blossom Portrait',
@@ -365,6 +349,22 @@ const landscapePhotos: Photo[] = [
 	{
 		src: '/images/optimized_images/landscape_bavarian_alps_sunset.jpg',
 		alt: 'Bavarian Alps Sunset',
+	},
+	{
+		src: '/images/new_images/landscape_vienna_schonnbrunn.jpg',
+		alt: 'Vienna Schönbrunn Palace',
+	},
+	{
+		src: '/images/new_images/landscape_vienna_botanical_garden.jpg',
+		alt: 'Vienna Botanical Garden',
+	},
+	{
+		src: '/images/new_images/landscape_vienna_dome.jpg',
+		alt: 'Vienna Cathedral',
+	},
+	{
+		src: '/images/new_images/landscape_roman_colosseum.jpg',
+		alt: 'Roman Colosseum',
 	},
 	{
 		src: '/images/optimized_images/landscape_dolomites_seceda.jpg',
@@ -537,7 +537,6 @@ export default function Photography() {
 						<TabsTrigger value='all'>All</TabsTrigger>
 						<TabsTrigger value='product'>Product</TabsTrigger>
 						<TabsTrigger value='lifestyle'>Lifestyle</TabsTrigger>
-						<TabsTrigger value='brand'>Brand</TabsTrigger>
 						<TabsTrigger value='portrait'>Portrait</TabsTrigger>
 						<TabsTrigger value='landscape'>Landscape</TabsTrigger>
 					</TabsList>
@@ -552,10 +551,6 @@ export default function Photography() {
 
 					<TabsContent value='lifestyle' className='mt-0'>
 						<PhotoGallery photos={lifestylePhotos} />
-					</TabsContent>
-
-					<TabsContent value='brand' className='mt-0'>
-						<PhotoGallery photos={brandPhotos} />
 					</TabsContent>
 
 					<TabsContent value='portrait' className='mt-0'>

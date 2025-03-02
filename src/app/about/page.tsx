@@ -32,7 +32,7 @@ export default function About() {
 								viewport={{ once: true }}
 							>
 								<Image
-									src='/images/profile.jpg'
+									src='/images/nicholas_gould.jpg'
 									alt='Nicholas Gould'
 									fill
 									sizes='(max-width: 768px) 100vw, 50vw'
@@ -76,20 +76,6 @@ export default function About() {
 								across various industries to create compelling
 								visual narratives that resonate with their
 								target audiences.
-							</motion.p>
-							<motion.p
-								className='text-muted-foreground'
-								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
-								transition={{ duration: 0.6, delay: 0.7 }}
-								viewport={{ once: true }}
-							>
-								Based in Seattle, I bring a Pacific Northwest
-								sensibility to my work—embracing natural light,
-								organic textures, and environmental
-								consciousness. My approach is collaborative and
-								detail-oriented, ensuring that each project not
-								only meets but exceeds client expectations.
 							</motion.p>
 						</motion.div>
 					</div>
