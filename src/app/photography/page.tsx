@@ -65,10 +65,6 @@ const allPhotos: Photo[] = [
 		alt: 'Lofoten Islands Church',
 	},
 	{
-		src: '/images/optimized_images/landscape_bavarian_alps_sunset.jpg',
-		alt: 'Bavarian Alps Sunset',
-	},
-	{
 		src: '/images/new_images/landscape_vienna_schonnbrunn.jpg',
 		alt: 'Vienna Schönbrunn Palace',
 	},

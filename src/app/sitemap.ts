@@ -94,11 +94,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			changeFrequency: 'monthly' as const,
 			priority: 0.8,
 			images: [
-				`${baseUrl}/images/optimized_images/product_eight_angles_vase.jpg`,
-				`${baseUrl}/images/optimized_images/product_eight_angles_bowl.jpg`,
-				`${baseUrl}/images/optimized_images/product_eight_angles_set.jpg`,
 				`${baseUrl}/images/optimized_images/product_lifestyle_eight_angles1.jpg`,
+				`${baseUrl}/images/optimized_images/product_lifestyle_eight_angles2.jpg`,
 				`${baseUrl}/images/optimized_images/product_lifestyle_eight_angles3.jpg`,
+				`${baseUrl}/images/optimized_images/product_lifestyle_eight_angles4.jpg`,
+				`${baseUrl}/images/optimized_images/product_lifestyle_eight_angles5.jpg`,
+				`${baseUrl}/images/optimized_images/product_lifestyle_eight_angles6.jpg`,
+				`${baseUrl}/images/optimized_images/product_lifestyle_eight_angles7.jpg`,
 			],
 		},
 		{

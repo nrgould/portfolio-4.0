@@ -16,7 +16,7 @@ export default function CaseStudies() {
 			id: 2,
 			title: 'Eight Angles',
 			description:
-				"Product and lifestyle photography for Eight Angles' sustainable clothing line, highlighting their minimalist aesthetic and eco-friendly materials.",
+				"Product and lifestyle photography for Eight Angles' premium jewelry collection, highlighting their minimalist bracelet designs and handcrafted details.",
 			href: '/case-studies/eight-angles',
 			image: '/images/optimized_images/product_lifestyle_eight_angles1.jpg',
 		},

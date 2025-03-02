@@ -44,15 +44,15 @@ export default function EightAnglesCaseStudy() {
 					</motion.h1>
 
 					<motion.div
-						className='aspect-[16/9] relative mb-8'
+						className='aspect-[1] relative mb-8'
 						initial={{ opacity: 0, y: 30 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
 						transition={{ duration: 0.6, delay: 0.3 }}
 					>
 						<Image
-							src='/images/optimized_images/product_eight_angles_vase.jpg'
-							alt='Eight Angles Collection'
+							src='/images/optimized_images/product_lifestyle_eight_angles6.jpg'
+							alt='Eight Angles Jewelry Collection'
 							fill
 							className='object-cover'
 						/>
@@ -70,19 +70,18 @@ export default function EightAnglesCaseStudy() {
 								Project Overview
 							</h2>
 							<p className='text-muted-foreground font-light leading-relaxed mb-4'>
-								Eight Angles, a premium home decor brand,
+								Eight Angles, a premium jewelry brand,
 								commissioned a product photography series for
-								their new collection of minimalist ceramic vases
-								and decorative objects. The goal was to create
-								clean, elegant imagery that highlighted the
-								unique geometric forms and subtle textures of
-								their handcrafted pieces.
+								their new collection of minimalist bracelets.
+								The goal was to create clean, elegant imagery
+								that highlighted the unique geometric forms and
+								subtle textures of their handcrafted pieces.
 							</p>
 							<p className='text-muted-foreground font-light leading-relaxed'>
 								The photography needed to align with their brand
 								aesthetic of understated luxury while showcasing
-								the versatility of their products in
-								contemporary home settings.
+								the versatility of their jewelry in contemporary
+								lifestyle settings.
 							</p>
 						</div>
 						<div>
@@ -92,17 +91,17 @@ export default function EightAnglesCaseStudy() {
 							<p className='text-muted-foreground font-light leading-relaxed mb-4'>
 								I developed a minimalist studio setup with
 								carefully controlled lighting to accentuate the
-								clean lines and subtle details of each piece.
+								clean lines and subtle details of each bracelet.
 								The photography style emphasized negative space,
 								creating a sense of calm sophistication that
 								aligned with the brand&apos;s identity.
 							</p>
 							<p className='text-muted-foreground font-light leading-relaxed'>
 								For context shots, I created simple vignettes
-								that suggested how the pieces might be displayed
-								in a home, using neutral backgrounds and
+								that suggested how the pieces might be worn or
+								displayed, using neutral backgrounds and
 								complementary props that wouldn&apos;t distract
-								from the featured products.
+								from the featured jewelry.
 							</p>
 						</div>
 					</motion.div>
@@ -125,24 +124,24 @@ export default function EightAnglesCaseStudy() {
 					>
 						<div className='aspect-square relative'>
 							<Image
-								src='/images/optimized_images/product_eight_angles_vase.jpg'
-								alt='Eight Angles Vase'
+								src='/images/optimized_images/product_lifestyle_eight_angles1.jpg'
+								alt='Eight Angles Bracelet'
 								fill
 								className='object-cover'
 							/>
 						</div>
 						<div className='aspect-square relative'>
 							<Image
-								src='/images/optimized_images/product_eight_angles_bowl.jpg'
-								alt='Eight Angles Bowl'
+								src='/images/optimized_images/product_lifestyle_eight_angles2.jpg'
+								alt='Eight Angles Bracelet Detail'
 								fill
 								className='object-cover'
 							/>
 						</div>
 						<div className='aspect-square relative'>
 							<Image
-								src='/images/optimized_images/product_eight_angles_set.jpg'
-								alt='Eight Angles Set'
+								src='/images/optimized_images/product_lifestyle_eight_angles3.jpg'
+								alt='Eight Angles Bracelet Set'
 								fill
 								className='object-cover'
 							/>
@@ -163,11 +162,11 @@ export default function EightAnglesCaseStudy() {
 							<ul className='text-muted-foreground font-light space-y-2'>
 								<li>
 									• Capturing the subtle textures and finishes
-									of ceramic surfaces
+									of the jewelry materials
 								</li>
 								<li>
-									• Creating consistent lighting across
-									various product shapes and sizes
+									• Creating consistent lighting to highlight
+									the metallic elements
 								</li>
 								<li>
 									• Balancing minimalist aesthetics with
