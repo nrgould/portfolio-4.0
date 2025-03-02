@@ -2,18 +2,15 @@ import * as motion from 'motion/react-client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MosaicGallery } from '@/components/mosaic-gallery';
+import { Button } from '@/components/ui/button';
+import Services from '@/components/services';
 
 // Server Component for SEO benefits
 export default function Home() {
 	return (
 		<div className='flex flex-col md:flex-row min-h-screen'>
 			{/* Main Content */}
-			<motion.div
-				className='flex-1 md:ml-64 lg:ml-72'
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				transition={{ duration: 0.5, delay: 0.2 }}
-			>
+			<div className='flex-1 md:ml-64 lg:ml-72'>
 				{/* Hero Section */}
 				<section className='relative w-full h-[70vh] mb-12'>
 					<div className='absolute inset-0'>
@@ -51,12 +48,9 @@ export default function Home() {
 							transition={{ duration: 0.7, delay: 0.7 }}
 							className='mt-8'
 						>
-							<Link
-								href='/contact'
-								className='px-6 py-3 bg-white text-black hover:bg-white/90 transition-colors'
-							>
-								Get in Touch
-							</Link>
+							<Button variant='outline' asChild>
+								<Link href='/contact'>Get in Touch</Link>
+							</Button>
 						</motion.div>
 
 						{/* Featured In Section */}
@@ -158,160 +152,6 @@ export default function Home() {
 					</motion.div>
 				</section>
 
-				{/* Testimonials Section */}
-
-				{/* Services Section */}
-				<section className='w-[90%] md:w-[80%] mx-auto py-16 mb-16'>
-					<motion.h2
-						className='text-2xl font-light text-center mb-12'
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1 }}
-						viewport={{ once: true }}
-						transition={{ duration: 0.5 }}
-					>
-						Photography Services
-					</motion.h2>
-
-					<div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-						{/* Service 1: Product Photography */}
-						<motion.div
-							className='text-center'
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.5, delay: 0.1 }}
-						>
-							<div className='mb-6 mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-muted/30'>
-								<svg
-									xmlns='http://www.w3.org/2000/svg'
-									width='24'
-									height='24'
-									viewBox='0 0 24 24'
-									fill='none'
-									stroke='currentColor'
-									strokeWidth='1.5'
-									strokeLinecap='round'
-									strokeLinejoin='round'
-									className='text-foreground'
-								>
-									<path d='m7.5 4.27 9 5.15' />
-									<path d='M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z' />
-									<path d='m3.3 7 8.7 5 8.7-5' />
-									<path d='M12 22V12' />
-								</svg>
-							</div>
-							<h3 className='text-xl font-light mb-3'>
-								Product Photography
-							</h3>
-							<p className='text-muted-foreground'>
-								Showcase your products with clean, detailed
-								imagery that highlights features and quality.
-								Studio and environmental setups available.
-							</p>
-						</motion.div>
-
-						{/* Service 2: Lifestyle Photography */}
-						<motion.div
-							className='text-center'
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.5, delay: 0.2 }}
-						>
-							<div className='mb-6 mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-muted/30'>
-								<svg
-									xmlns='http://www.w3.org/2000/svg'
-									width='24'
-									height='24'
-									viewBox='0 0 24 24'
-									fill='none'
-									stroke='currentColor'
-									strokeWidth='1.5'
-									strokeLinecap='round'
-									strokeLinejoin='round'
-									className='text-foreground'
-								>
-									<path d='M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z' />
-								</svg>
-							</div>
-							<h3 className='text-xl font-light mb-3'>
-								Lifestyle Photography
-							</h3>
-							<p className='text-muted-foreground'>
-								Capture your products in authentic, real-world
-								scenarios that tell a story and connect with
-								your audience.
-							</p>
-						</motion.div>
-
-						{/* Service 3: Brand Photography */}
-						<motion.div
-							className='text-center'
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.5, delay: 0.3 }}
-						>
-							<div className='mb-6 mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-muted/30'>
-								<svg
-									xmlns='http://www.w3.org/2000/svg'
-									width='24'
-									height='24'
-									viewBox='0 0 24 24'
-									fill='none'
-									stroke='currentColor'
-									strokeWidth='1.5'
-									strokeLinecap='round'
-									strokeLinejoin='round'
-									className='text-foreground'
-								>
-									<circle cx='12' cy='12' r='10' />
-									<path d='m16 8-8 8' />
-									<path d='m8 8 8 8' />
-								</svg>
-							</div>
-							<h3 className='text-xl font-light mb-3'>
-								Portrait Photography
-							</h3>
-							<p className='text-muted-foreground'>
-								Highlight individuality and emotion with
-								striking, authentic portraits that capture
-								personality and presence in every frame
-							</p>
-						</motion.div>
-					</div>
-
-					<motion.div
-						className='text-center mt-12'
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1 }}
-						viewport={{ once: true }}
-						transition={{ duration: 0.5, delay: 0.4 }}
-					>
-						<Link
-							href='/contact'
-							className='inline-flex items-center text-foreground hover:text-foreground/80 transition-colors'
-						>
-							<span>Discuss your project</span>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								width='18'
-								height='18'
-								viewBox='0 0 24 24'
-								fill='none'
-								stroke='currentColor'
-								strokeWidth='1.5'
-								strokeLinecap='round'
-								strokeLinejoin='round'
-								className='ml-2'
-							>
-								<path d='M5 12h14' />
-								<path d='m12 5 7 7-7 7' />
-							</svg>
-						</Link>
-					</motion.div>
-				</section>
-
 				{/* Portfolio Gallery */}
 				<section>
 					<motion.h2
@@ -325,7 +165,9 @@ export default function Home() {
 					</motion.h2>
 					<MosaicGallery />
 				</section>
-			</motion.div>
+
+				<Services />
+			</div>
 		</div>
 	);
 }
