@@ -378,7 +378,6 @@ const landscapePhotos: Photo[] = [
 		src: '/images/optimized_images/landscape_heart_hut_in_norway.jpg',
 		alt: 'Heart Hut in Norway',
 	},
-	{ src: '/images/R6II5990.jpg', alt: 'Environmental Landscape' },
 	{
 		src: '/images/optimized_images/landscape_dolomites_cadini_di_misurina.jpg',
 		alt: 'Dolomites Cadini di Misurina',

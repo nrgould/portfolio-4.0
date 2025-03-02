@@ -54,7 +54,7 @@ export default function CaseStudies() {
 						{caseStudies.map((study, index) => (
 							<motion.div
 								key={study.id}
-								className='grid md:grid-cols-2 gap-8'
+								className='grid md:grid-cols-2 gap-8 items-center'
 								initial={{ opacity: 0, y: 30 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
@@ -64,7 +64,7 @@ export default function CaseStudies() {
 									delay: index * 0.15,
 								}}
 							>
-								<div className='space-y-4'>
+								<div className='space-y-4 flex flex-col justify-center'>
 									<h2 className='text-xl'>{study.title}</h2>
 									<p className='text-muted-foreground'>
 										{study.description}
@@ -80,13 +80,12 @@ export default function CaseStudies() {
 								</div>
 								<div className='relative overflow-hidden'>
 									<Link href={study.href}>
-										<div className='relative overflow-hidden'>
+										<div className='relative overflow-hidden aspect-square'>
 											<Image
 												src={study.image}
 												alt={`${study.title} Case Study`}
-												width={800}
-												height={600}
-												className='w-full h-auto object-cover transition-transform duration-700 hover:scale-105'
+												fill
+												className='object-cover transition-transform duration-700 hover:scale-105'
 												sizes='(max-width: 768px) 100vw, 50vw'
 												priority={study.id === 1}
 											/>

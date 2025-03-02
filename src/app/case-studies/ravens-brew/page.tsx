@@ -9,7 +9,7 @@ export default function RavensBrewCaseStudy() {
 		<div className='flex-1'>
 			{/* Main Content */}
 			<div className='flex-1 md:ml-64 lg:ml-72 p-4 md:p-8'>
-				<div className='max-w-[75%] mx-auto'>
+				<div className='max-w-full md:max-w-2/3 lg:max-w-1/2 mx-auto'>
 					<div className='mb-8'>
 						<Link
 							href='/case-studies'
@@ -169,7 +169,7 @@ export default function RavensBrewCaseStudy() {
 							</motion.h2>
 							<div className='grid grid-cols-1 md:grid-cols-3 gap-4 mb-6'>
 								<motion.div
-									className='aspect-[4/5] relative overflow-hidden'
+									className='aspect-square relative overflow-hidden'
 									initial={{ opacity: 0, scale: 0.95 }}
 									whileInView={{ opacity: 1, scale: 1 }}
 									viewport={{ once: true }}
@@ -185,7 +185,7 @@ export default function RavensBrewCaseStudy() {
 									/>
 								</motion.div>
 								<motion.div
-									className='aspect-[4/5] relative overflow-hidden'
+									className='aspect-square relative overflow-hidden'
 									initial={{ opacity: 0, scale: 0.95 }}
 									whileInView={{ opacity: 1, scale: 1 }}
 									viewport={{ once: true }}
@@ -201,7 +201,7 @@ export default function RavensBrewCaseStudy() {
 									/>
 								</motion.div>
 								<motion.div
-									className='aspect-[4/5] relative overflow-hidden'
+									className='aspect-square relative overflow-hidden'
 									initial={{ opacity: 0, scale: 0.95 }}
 									whileInView={{ opacity: 1, scale: 1 }}
 									viewport={{ once: true }}

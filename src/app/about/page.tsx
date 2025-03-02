@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import * as motion from 'motion/react-client';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export default function About() {
 	return (
@@ -176,12 +179,15 @@ export default function About() {
 							transition={{ duration: 0.6, delay: 0.7 }}
 							viewport={{ once: true }}
 						>
-							<a
-								href='/contact'
-								className='inline-block px-6 py-3 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors'
-							>
-								Get in Touch
-							</a>
+							<Button variant='outline' asChild>
+								<Link
+									href='/contact'
+									className='inline-flex items-center text-foreground hover:text-foreground/80 transition-colors'
+								>
+									<span>Get in Touch</span>
+									<ArrowRight className='w-4 h-4 ml-2' />
+								</Link>
+							</Button>
 						</motion.div>
 					</motion.div>
 				</div>

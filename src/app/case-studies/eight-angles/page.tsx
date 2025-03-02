@@ -9,7 +9,7 @@ export default function EightAnglesCaseStudy() {
 		<div className='flex-1'>
 			{/* Main Content */}
 			<div className='flex-1 md:ml-64 lg:ml-72 p-4 md:p-8'>
-				<div className='max-w-[75%] mx-auto'>
+				<div className='max-w-full md:max-w-2/3 lg:max-w-1/2 mx-auto'>
 					<div className='mb-8'>
 						<Link
 							href='/case-studies'
