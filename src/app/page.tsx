@@ -15,8 +15,8 @@ export default function Home() {
 				<section className='relative w-full h-[70vh] mb-12'>
 					<div className='absolute inset-0'>
 						<Image
-							src='/images/leaves.jpg'
-							alt='Artistic photograph of leaves'
+							src='/images/optimized_images/product_lifestyle_eight_angles7.jpg'
+							alt='Eight Angles jewelry collection'
 							fill
 							priority
 							className='object-cover'

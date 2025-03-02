@@ -1,11 +1,22 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function Footer() {
 	const currentYear = new Date().getFullYear();
 
 	return (
-		<footer className='w-full py-12'>
-			<div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+		<footer className='w-full py-12 relative'>
+			{/* Leaves background */}
+			<div className='absolute inset-0 overflow-hidden z-0'>
+				<Image
+					src='/images/leaves.jpg'
+					alt='Leaves background'
+					fill
+					className='object-cover opacity-20'
+				/>
+			</div>
+
+			<div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10'>
 				<div className='flex flex-col items-center justify-center text-center mb-8'>
 					<h3 className='text-xl font-light mb-4'>
 						See more of my work:
