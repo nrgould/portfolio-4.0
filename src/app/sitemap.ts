@@ -37,7 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 				// Landscape images
 				`${baseUrl}/images/optimized_images/landscape_dolomites_santa_magdalena.jpg`,
 				`${baseUrl}/images/optimized_images/1_landscape_snowy_church_lofoten_islands_norway.jpg`,
-				`${baseUrl}/images/optimized_images/landscape_bavarian_alps_sunset.jpg`,
 				`${baseUrl}/images/new_images/landscape_vienna_schonnbrunn.jpg`,
 				`${baseUrl}/images/new_images/landscape_vienna_botanical_garden.jpg`,
 				`${baseUrl}/images/new_images/landscape_vienna_dome.jpg`,

@@ -129,11 +129,11 @@ export function MosaicGallery() {
 			viewport={{ once: true }}
 			transition={{ duration: 0.5 }}
 		>
-			<div className='columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4'>
+			<div className='columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6'>
 				{galleryItems.map((item, index) => (
 					<motion.div
 						key={item.id}
-						className='break-inside-avoid mb-4 overflow-hidden'
+						className='break-inside-avoid mb-6 overflow-hidden'
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
